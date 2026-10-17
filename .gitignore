@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.ipynb_checkpoints/
+
+# Virtual environments
+venv/
+.env/
+.venv/
+
+# Secrets / credentials
+.env
+*.key
+*.pem
+
+# ML model binaries
+*.pkl
+*.joblib
+
+# Large neuroimaging files
+*.nii
+*.nii.gz
+*.mgz
+*.mgh
+
+# FreeSurfer outputs
+freesurfer_subjects/
+
+# Logs
+*.log
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+*.bak
