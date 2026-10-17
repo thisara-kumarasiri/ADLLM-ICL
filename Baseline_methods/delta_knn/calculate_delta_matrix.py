@@ -12,6 +12,9 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from utils.client import send_chat_request
 from utils.prompts import INST_SYS_CTX, INST_USR_PROB_SHORT
 
+PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
+sys.path.insert(0, str(PROJECT_ROOT))
+
 import Settings as cfg
 
 MODEL_NAME = cfg.LLM_MODEL

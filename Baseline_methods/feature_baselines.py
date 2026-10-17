@@ -6,6 +6,9 @@ import numpy as np
 from scipy.spatial.distance import cdist
 from sklearn.preprocessing import StandardScaler
 
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(PROJECT_ROOT))
+
 import Settings as cfg
 
 SUPPORTED_METHODS = {

@@ -1,6 +1,9 @@
 from utils.claim_extractions import run_claim_extraction
 from utils.consistency_judge import run_consistency_analysis
 
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(PROJECT_ROOT))
+
 import Settings as cfg
 
 

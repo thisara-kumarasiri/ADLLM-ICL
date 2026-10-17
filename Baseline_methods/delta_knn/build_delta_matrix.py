@@ -1,6 +1,9 @@
 from deltaknn import extract_example
 from calculate_delta_matrix import store_delta_matrix_and_index
 
+PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
+sys.path.insert(0, str(PROJECT_ROOT))
+
 import Settings as cfg
 
 # ============================================================

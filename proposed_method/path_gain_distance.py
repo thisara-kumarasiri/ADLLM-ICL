@@ -6,8 +6,8 @@ from typing import Any, NamedTuple
 import numpy as np
 import pandas as pd
 
-from ...proposed_method import feature_weights as weighted_core
-from ...proposed_method import xgboost_paths as path_core
+from . import feature_weights as weighted_core
+from . import xgboost_paths as path_core
 
 
 class DecisionStep(NamedTuple):

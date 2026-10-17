@@ -12,6 +12,9 @@ from pathlib import Path
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(PROJECT_ROOT))
+
 import Settings as cfg
 
 
