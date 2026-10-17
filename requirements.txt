@@ -1,0 +1,11 @@
+joblib
+langchain-openai
+numpy
+openai
+pandas
+python-dotenv
+scikit-learn
+scipy
+tqdm
+xgboost
+matplotlib
