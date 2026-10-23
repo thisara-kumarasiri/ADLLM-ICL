@@ -113,20 +113,29 @@ McNemar tests against the baselines remained non-significant after Holm correcti
 
 ```
 .
-├── data/              # Feature tables (ADNI data not included)
-├── figures/           # Framework and result figures
-├── src/               # Selection methods, prompts, evaluation
-├── notebooks/         # Analysis notebooks
+├── figures/            # Framework figure
+├── src/                # Example-selection methods, prompts, evaluation
+├── Settings.py         # Project paths and configuration
 ├── requirements.txt
 └── README.md
 ```
 
 ## Get Started
 
-Clone Github repo
-git clone git@github.com:thisara-kumarasiri/ADLLM-ICL.git
-Setup environment. 
-Check out data and evaluation
+1. Clone the GitHub repo
+
+```bash
+git clone https://github.com/thisara-kumarasiri/ADLLM-ICL.git
+cd ADLLM-ICL
+```
+
+2. Set up the environment
+
+```bash
+pip install -r requirements.txt
+```
+
+3. Check out [data](#dataset) and [evaluation](#experimental-setup) for dataset preparation and how experiments are run.
 
 
 ## Limitations
@@ -149,4 +158,4 @@ Future work will evaluate the framework on larger and external cohorts, addition
 
 ## Acknowledgments
 
-Data collection and sharing for this project was funded by the Alzheimer's Disease Neuroimaging Initiative (ADNI) (National Institutes of Health Grant U01 AG024904) and DOD ADNI (Department of Defense award number W81XWH-12-2-0012
+Data collection and sharing for this project was funded by the Alzheimer's Disease Neuroimaging Initiative (ADNI) (National Institutes of Health Grant U01 AG024904) and DOD ADNI (Department of Defense award number W81XWH-12-2-0012).
