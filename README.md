@@ -121,14 +121,13 @@ McNemar tests against the baselines remained non-significant after Holm correcti
 └── README.md
 ```
 
-## Installation
+## Get Started
 
-...
+Clone Github repo
+git clone git@github.com:thisara-kumarasiri/ADLLM-ICL.git
+Setup environment. 
+Check out data and evaluation
 
-## Usage
-
-
-...
 
 ## Limitations
 
