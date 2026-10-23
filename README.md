@@ -171,8 +171,10 @@ Future work will evaluate the framework on larger and external cohorts, addition
 
 ## Acknowledgments
 
-Data collection and sharing for this project was funded by the Alzheimer's Disease Neuroimaging Initiative (ADNI) (National Institutes of Health Grant U01 AG024904) and DOD ADNI (Department of Defense award number W81XWH-12-2-0012).
+Data collection and sharing for this project was funded by the Alzheimer's Disease Neuroimaging Initiative (ADNI) (National Institutes of Health Grant U01 AG024904) and DOD ADNI (Department of Defense award number W81XWH-12-2-0012
 
 ## License
 
-> TODO: add license (e.g. MIT).
+## License
+
+This code is released under the [MIT License](LICENSE). ADNI data is not included and is subject to the ADNI Data Use Agreement.
