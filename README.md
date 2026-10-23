@@ -97,16 +97,6 @@ LR weighting contributes more to sensitivity, while the XGB-based components fav
 
 The improvements are numerical only. McNemar tests against the baselines were not significant after Holm correction (all adjusted p = 0.875), and the ablation showed no significant overall difference (Q = 3.50, p = 0.174).
 
-### Additional LLM (Grok4.2)
-
-| Method | ACC |
-|---|---|
-| Zero-shot | 68.25 |
-| Random | 76.19 |
-| Euclidean | 82.54 |
-| Delta-kNN | 79.36 |
-| **Proposed** | **84.13** |
-
 ## Interpretability
 
 - **Reasoning consistency:** Stable predictions across repeated runs were mostly accompanied by consistent reasoning. Reasoning inconsistency was more common when predictions varied.
