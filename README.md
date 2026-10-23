@@ -135,8 +135,6 @@ Future work will evaluate the framework on larger and external cohorts, addition
 
 ## Citation
 
-> TODO: update once published.
-
 ```bibtex
 @inproceedings{kumarasiri2026mlguided,
   title     = {Improving Demonstration Selection for Interpretable LLM-Based Alzheimer's Disease Classification from MRI-Derived Features},
