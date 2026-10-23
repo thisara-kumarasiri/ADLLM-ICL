@@ -15,7 +15,7 @@ Machine learning (ML) models can classify Alzheimer's disease (AD) from MRI-deri
 
 This work proposes an **ML-guided example-selection method** that uses lightweight supervised models (logistic regression and XGBoost) to learn discriminative feature-label relationships from labeled data, and uses them to select informative demonstrations without any additional LLM inference.
 
-### Main contributions
+### Main Contributions
 
 1. An ML-guided selection strategy combining task-relevant logistic regression (LR) and XGBoost (XGB) information to identify informative examples.
 2. Improved classification over zero-shot and baseline example-selection methods with GPT5.4.
@@ -62,7 +62,7 @@ For a query subject `x` and a candidate `c`:
 
 ## Results
 
-### Classification performance
+### Classification Performance
 
 | Model | Method | ACC | SEN | SPE | F1 |
 |---|---|---|---|---|---|
@@ -82,7 +82,7 @@ For a query subject `x` and a candidate `c`:
 Metrics: ACC = accuracy, SEN = sensitivity, SPE = specificity, F1 = F1 score. Accuracy is the majority vote over three runs. Grok4.2 was an additional experiment, so only accuracy is reported for it.
 
 
-### Ablation study
+### Ablation Study
 
 | Method | ACC | SEN | SPE | F1 |
 |---|---|---|---|---|
@@ -93,7 +93,7 @@ Metrics: ACC = accuracy, SEN = sensitivity, SPE = specificity, F1 = F1 score. Ac
 
 LR weighting contributes more to sensitivity, while the XGB-based components favor specificity.
 
-### Statistical significance
+### Statistical Significance
 
 The improvements are numerical only. McNemar tests against the baselines were not significant after Holm correction (all adjusted p = 0.875), and the ablation showed no significant overall difference (Q = 3.50, p = 0.174).
 
@@ -105,8 +105,6 @@ The improvements are numerical only. McNemar tests against the baselines were no
 - **Directional validity:** Reduced measures were mostly associated with AD, preserved measures with CN, and increased measures (particularly ventricular) with AD.
 
 ## Repository Structure
-
-> TODO: update to match your repo.
 
 ```
 .
@@ -120,38 +118,16 @@ The improvements are numerical only. McNemar tests against the baselines were no
 
 ## Installation
 
-> TODO: update commands.
-
-```bash
-git clone https://github.com/thisara-kumarasiri/ADLLM-ICL.git
-cd ADLLM-ICL
-pip install -r requirements.txt
-```
+...
 
 ## Usage
 
-> TODO: add your actual scripts and arguments.
 
-```bash
-# 1. Extract features / prepare data
-python prepare_data.py
-
-# 2. Train LR and XGBoost and compute example rankings
-python select_examples.py --method proposed --k 2
-
-# 3. Run LLM inference
-python run_icl.py --model gpt-5.4 --method proposed --runs 3
-```
-
-An OpenAI API key is required for LLM inference:
-
-```bash
-export OPENAI_API_KEY="your-key"
-```
+...
 
 ## Limitations
 
-- Experiments use a single ADNI cohort and primarily one LLM (GPT5.4, with an additional Grok4.2 check), which may limit generalizability.
+- Experiments use a single ADNI cohort and primarily two LLMs (GPT5.4 and Grok4.2), which may limit generalizability.
 - Reasoning analysis reflects generated explanations, not clinically validated causal interpretations.
 - Accuracy gains are not statistically significant on the current test set.
 
@@ -172,9 +148,3 @@ Future work will evaluate the framework on larger and external cohorts, addition
 ## Acknowledgments
 
 Data collection and sharing for this project was funded by the Alzheimer's Disease Neuroimaging Initiative (ADNI) (National Institutes of Health Grant U01 AG024904) and DOD ADNI (Department of Defense award number W81XWH-12-2-0012
-
-## License
-
-## License
-
-This code is released under the [MIT License](LICENSE). ADNI data is not included and is subject to the ADNI Data Use Agreement.
