@@ -73,6 +73,14 @@ For a query subject `x` and a candidate `c`:
 | GPT5.4 | Euclidean | 84.13 | 86.21 | 82.35 | 83.33 |
 | GPT5.4 | Delta-kNN | 85.71 | 82.76 | 88.23 | 84.21 |
 | GPT5.4 | **Proposed** | **90.48** | 82.76 | **97.06** | **88.89** |
+| Grok4.2 | Zero-shot | 68.25 | – | – | – |
+| Grok4.2 | Random | 76.19 | – | – | – |
+| Grok4.2 | Euclidean | 82.54 | – | – | – |
+| Grok4.2 | Delta-kNN | 79.36 | – | – | – |
+| Grok4.2 | **Proposed** | **84.13** | – | – | – |
+
+Metrics: ACC = accuracy, SEN = sensitivity, SPE = specificity, F1 = F1 score. Accuracy is the majority vote over three runs. Grok4.2 was an additional experiment, so only accuracy is reported for it.
+
 
 ### Ablation study
 
