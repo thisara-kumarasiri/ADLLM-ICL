@@ -135,7 +135,7 @@ cd ADLLM-ICL
 pip install -r requirements.txt
 ```
 
-3. Check out [data](#dataset) and [evaluation](#experimental-setup) for dataset preparation and how experiments are run.
+3. Check out [data](#dataset) and [experimental-setup](#experimental-setup) for dataset preparation and how experiments are run.
 
 
 ## Limitations
