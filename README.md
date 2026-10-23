@@ -88,9 +88,9 @@ Metrics: ACC = accuracy, SEN = sensitivity, SPE = specificity, F1 = F1 score. Ac
 
 LR weighting contributes more to sensitivity, while the XGB-based components favor specificity.
 
-### Statistical Significance
+### Statistical significance
 
-The improvements are numerical only. McNemar tests against the baselines were not significant after Holm correction (all adjusted p = 0.875), and the ablation showed no significant overall difference (Q = 3.50, p = 0.174).
+McNemar tests against the baselines remained non-significant after Holm correction (all $p_{adj} = 0.875$), and the ablation analysis also showed no significant overall difference ($Q = 3.50$, $p = 0.174$). Thus, the proposed method provides numerical improvements in accuracy, but the differences are not statistically significant on the current test set.
 
 ### Additional LLM (Grok4.2)
 
