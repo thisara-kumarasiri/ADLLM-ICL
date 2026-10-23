@@ -142,31 +142,7 @@ pip install -r requirements.txt
 
 All paths and run parameters are set in [`Settings.py`](Settings.py). Paths are relative to the project root, so the repo works wherever it is cloned. Edit this file before running the pipeline.
 
-| Setting | Default | Description |
-|---|---|---|
-| `MRI_INPUT_DIR` | `ADNI/raw_images` | Folder with raw T1-weighted MRI scans |
-| `SUBJECT_INFO_FILE` | `ADNI/subject_info.csv` | Subject metadata (diagnosis, age, gender) |
-| `FREESURFER_SUBJECTS_DIR` | `FREESURFER_Extractions` | FreeSurfer output directory |
-| `FREESURFER_MAX_SUBJECTS` | `3` | Number of subjects processed in parallel |
-| `FREESURFER_THREADS_PER_SUBJECT` | `5` | CPU threads per subject |
-| `FREESURFER_RUN_BRAINSTEM` | `True` | Also run brainstem segmentation |
-| `ALL_FEATURES_CSV` | `all_features.csv` | Combined feature table (176 features per subject) |
-| `DATA_SPLIT_DIR` | `Data` | Train/validation/test splits |
-| `ML_MODEL_OUTPUT_ROOT` | `ML` | Trained LR and XGBoost models |
-| `DELTA_KNN_K` | `13` | `k` for the Delta-kNN baseline |
-| `N_SHOT` | `0` | Number of ICL examples (`0` = zero-shot, `4` = 4-shot) |
-| `LLM_MODEL` | `grok-4.20-reasoning` | LLM to query (`gpt5.4` or `grok-4.20-reasoning`) |
-| `SELECTION_METHOD` | `lr_weighted_xgboost_path_gain` | Example-selection method |
-| `EXAMPLE_SELECTION_OUTPUT_ROOT` | `Examples_Selected` | Selected examples per query |
-| `LLM_N_REPEATS` | `3` | Runs per configuration (majority vote) |
-| `LLM_PARALLEL_CALLS` | `4` | Concurrent API calls |
-| `RETRY_COUNT` / `RETRY_WAIT_SECONDS` | `5` / `5` | API retry behaviour |
-| `LLM_RESULTS_ROOT` | `LLM_results` | LLM predictions |
-| `REASONING_ROOT` | `Reasoning` | Reasoning analysis outputs |
-
 To reproduce the paper's main setting, use `N_SHOT = 4`, `LLM_MODEL = "gpt5.4"` and `SELECTION_METHOD = "lr_weighted_xgboost_path_gain"`.
-
-> ADNI images and subject files are not included in this repository. Request access at [adni.loni.usc.edu](https://adni.loni.usc.edu) and place them in the folders above.
 
 
 ## Limitations
