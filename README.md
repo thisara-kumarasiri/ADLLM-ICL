@@ -79,19 +79,20 @@ All metrics are reported as percentages.
 | Grok-4.2 | Cosine | 71.43 | 96.55 | 50.00 | 75.67 |
 | Grok-4.2 | Euclidean | 82.54 | 86.21 | 79.41 | 81.97 |
 | Grok-4.2 | Delta-kNN | 79.36 | 82.76 | 76.47 | 78.69 |
-| Grok-4.2 | **Proposed** | **84.13** | 89.65 | **79.41** | **83.87** |
-
-Metrics: ACC = accuracy, SEN = sensitivity, SPE = specificity, F1 = F1 score. Accuracy is the majority vote over three runs. Grok4.2 was an additional experiment, so only accuracy is reported for it.
-
+| Grok-4.2 | **Proposed** | **85.71** | 89.65 | **82.35** | **85.24** |
 
 ### Ablation Study
 
-| Method | ACC | SEN | SPE | F1 |
-|---|---|---|---|---|
-| LR | 87.30 | 89.65 | 85.29 | 86.67 |
-| XGB path | 85.71 | 79.31 | 91.18 | 83.63 |
-| XGB path + Gain | 87.30 | 79.31 | 94.12 | 85.18 |
-| **LR + XGB path + Gain** | **90.48** | 82.76 | 97.06 | 88.89 |
+| Model | Method | ACC | SEN | SPE | F1 |
+|---|---|---:|---:|---:|---:|
+|GPT-5.4 | LR | 87.30 | 89.65 | 85.29 | 86.67 |
+|GPT-5.4 | XGB path | 85.71 | 79.31 | 91.18 | 83.63 |
+|GPT-5.4 | XGB path + Gain | 87.30 | 79.31 | 94.12 | 85.18 |
+|GPT-5.4 | **LR + XGB path + Gain** | **90.48** | 82.76 | 97.06 | 88.89 |
+|Grok-4.2 | LR | 79.36 | 86.21 | 73.53 | 79.36 |
+|Grok-4.2 | XGB path | 74.60 | 79.31 | 70.59 | 74.19 |
+|Grok-4.2 | XGB path + Gain | 82.54 | 86.21 | 79.41 | 81.97 |
+|Grok-4.2 | **LR + XGB path + Gain** | **84.13** | 89.65 | **79.41** | **83.87** |
 
 LR weighting contributes more to sensitivity, while the XGB-based components favor specificity.
 
