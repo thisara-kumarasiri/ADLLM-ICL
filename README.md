@@ -16,7 +16,7 @@ This work proposes an **ML-guided example-selection method** that uses lightweig
 ### Main Contributions
 
 1. An ML-guided selection strategy combining task-relevant logistic regression (LR) and XGBoost (XGB) information to identify informative examples.
-2. Improved classification over zero-shot and baseline example-selection methods with GPT5.4.
+2. Improved classification over zero-shot and baseline example-selection methods with GPT5.4 and Grok4.2.
 3. Analysis of LLM-generated reasoning for consistency, biological and directional validity, and variation with the selected ICL examples.
 
 ## Method
@@ -53,24 +53,33 @@ For a query subject `x` and a candidate `c`:
 
 - LR and XGB are trained for AD vs. CN classification on the training set, with validation used for cross-validated hyperparameter tuning.
 - Training subjects form the candidate pool; test subjects are the queries.
-- **LLM:** GPT5.4, 4-shot ICL (`k = 2`: two AD and two CN examples per query).
+- **LLM:** GPT5.4 & Grok4.2, 4-shot ICL (`k = 2`: two AD and two CN examples per query).
 - Each LLM-selection configuration is run **three times**, and accuracy is computed by majority vote across runs.
-- **Baselines:** zero-shot, random, Euclidean, and Delta-kNN.
+- **Baselines:** zero-shot, random, Cosine, Euclidean, and Delta-kNN.
 - GPT4.1 is used to assess reasoning consistency and extract structured information from explanations.
 
 ## Results
 
 ### Classification Performance
 
-| Model | Method | ACC | SEN | SPE | F1 |
-|---|---|---|---|---|---|
-| LR | ML | 87.30 | 89.66 | 85.29 | 86.67 |
-| XGBoost | ML | 87.30 | 86.21 | 88.24 | 86.21 |
-| GPT5.4 | Zero-shot | 84.13 | 79.31 | 88.23 | 82.14 |
-| GPT5.4 | Random | 84.13 | 86.21 | 82.35 | 83.33 |
-| GPT5.4 | Euclidean | 84.13 | 86.21 | 82.35 | 83.33 |
-| GPT5.4 | Delta-kNN | 85.71 | 82.76 | 88.23 | 84.21 |
-| GPT5.4 | **Proposed** | **90.48** | 82.76 | **97.06** | **88.89** |
+All metrics are reported as percentages.
+
+| Model | Method | Accuracy | Sensitivity | Specificity | F1-score |
+|---|---|---:|---:|---:|---:|
+| LR | ML baseline | 87.30 | 89.66 | 85.29 | 86.67 |
+| XGBoost | ML baseline | 87.30 | 86.21 | 88.24 | 86.21 |
+| GPT-5.4 | Zero-shot | 84.13 | 79.31 | 88.23 | 82.14 |
+| GPT-5.4 | Random | 84.13 | 86.21 | 82.35 | 83.33 |
+| GPT-5.4 | Cosine | 73.02 | 65.52 | 79.41 | 69.09 |
+| GPT-5.4 | Euclidean | 84.13 | 86.21 | 82.35 | 83.33 |
+| GPT-5.4 | Delta-kNN | 85.71 | 82.76 | 88.23 | 84.21 |
+| GPT-5.4 | **Proposed** | **90.48** | 82.76 | **97.06** | **88.89** |
+| Grok-4.2 | Zero-shot | 68.25 | 96.55 | 44.12 | 73.68 |
+| Grok-4.2 | Random | 76.19 | 89.65 | 64.71 | 77.61 |
+| Grok-4.2 | Cosine | 71.43 | 96.55 | 50.00 | 75.67 |
+| Grok-4.2 | Euclidean | 82.54 | 86.21 | 79.41 | 81.97 |
+| Grok-4.2 | Delta-kNN | 79.36 | 82.76 | 76.47 | 78.69 |
+| Grok-4.2 | **Proposed** | **84.13** | 89.65 | **79.41** | **83.87** |
 
 Metrics: ACC = accuracy, SEN = sensitivity, SPE = specificity, F1 = F1 score. Accuracy is the majority vote over three runs. Grok4.2 was an additional experiment, so only accuracy is reported for it.
 
@@ -89,16 +98,6 @@ LR weighting contributes more to sensitivity, while the XGB-based components fav
 ### Statistical significance
 
 McNemar tests against the baselines remained non-significant after Holm correction (all $p_{adj} = 0.875$), and the ablation analysis also showed no significant overall difference ($Q = 3.50$, $p = 0.174$). Thus, the proposed method provides numerical improvements in accuracy, but the differences are not statistically significant on the current test set.
-
-### Additional LLM (Grok4.2)
-
-| Method | ACC |
-|---|---|
-| Zero-shot | 68.25 |
-| Random | 76.19 |
-| Euclidean | 82.54 |
-| Delta-kNN | 79.36 |
-| **Proposed** | **84.13** |
 
 ## Interpretability
 
