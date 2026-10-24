@@ -88,17 +88,65 @@ All metrics are reported as percentages.
 |GPT-5.4 | LR | 87.30 | 89.65 | 85.29 | 86.67 |
 |GPT-5.4 | XGB path | 85.71 | 79.31 | 91.18 | 83.63 |
 |GPT-5.4 | XGB path + Gain | 87.30 | 79.31 | 94.12 | 85.18 |
-|GPT-5.4 | **LR + XGB path + Gain** | **90.48** | 82.76 | 97.06 | 88.89 |
+|GPT-5.4 | **LR + XGB path + Gain** | **90.48** | 82.76 | **97.06** | **88.89** |
 |Grok-4.2 | LR | 79.36 | 86.21 | 73.53 | 79.36 |
 |Grok-4.2 | XGB path | 74.60 | 79.31 | 70.59 | 74.19 |
 |Grok-4.2 | XGB path + Gain | 82.54 | 86.21 | 79.41 | 81.97 |
-|Grok-4.2 | **LR + XGB path + Gain** | **84.13** | 89.65 | **79.41** | **83.87** |
+|Grok-4.2 | **LR + XGB path + Gain** | **85.71** | **89.65** | **82.35** | **85.24** |
 
 LR weighting contributes more to sensitivity, while the XGB-based components favor specificity.
 
 ### Statistical significance
 
-McNemar tests against the baselines remained non-significant after Holm correction (all $p_{adj} = 0.875$), and the ablation analysis also showed no significant overall difference ($Q = 3.50$, $p = 0.174$). Thus, the proposed method provides numerical improvements in accuracy, but the differences are not statistically significant on the current test set.
+Statistical significance was evaluated separately for GPT-5.4 and Grok-4.2 using subject-level majority-vote predictions across the three runs. Cochran's Q test was used for overall comparisons across methods, followed by exact pairwise McNemar tests comparing the proposed method with each baseline. Holm correction was applied to account for multiple pairwise comparisons.
+
+#### GPT-5.4
+
+**Main method comparison**
+
+- **Q(4) = 2.93, p = 0.570**
+
+| Comparison | Proposed correct / Baseline wrong | Proposed wrong / Baseline correct | Raw p | Holm-adjusted p | Significant |
+|---|---:|---:|---:|---:|:---:|
+| Proposed vs Zero-shot | 5 | 1 | 0.219 | 0.875 | No |
+| Proposed vs Random | 5 | 1 | 0.219 | 0.875 | No |
+| Proposed vs Euclidean | 6 | 2 | 0.289 | 0.875 | No |
+| Proposed vs Delta-KNN | 4 | 1 | 0.375 | 0.875 | No |
+
+**Ablation analysis**
+
+- **Q(3) = 1.84, p = 0.607**
+
+| Comparison | Proposed correct / Ablation wrong | Proposed wrong / Ablation correct | Raw p | Holm-adjusted p | Significant |
+|---|---:|---:|---:|---:|:---:|
+| Proposed vs LR weighting only | 4 | 2 | 0.688 | 1.000 | No |
+| Proposed vs XGBoost shared path | 3 | 0 | 0.250 | 0.750 | No |
+| Proposed vs XGBoost shared path + gain | 2 | 0 | 0.500 | 1.000 | No |
+
+#### Grok-4.20-reasoning
+
+**Main method comparison**
+
+- **Q(4) = 9.75, p = 0.0448**
+
+| Comparison | Proposed correct / Baseline wrong | Proposed wrong / Baseline correct | Raw p | Holm-adjusted p | Significant |
+|---|---:|---:|---:|---:|:---:|
+| Proposed vs Zero-shot | 13 | 2 | 0.007 | 0.030 | **Yes** |
+| Proposed vs Random | 9 | 3 | 0.146 | 0.438 | No |
+| Proposed vs Euclidean | 6 | 4 | 0.754 | 0.775 | No |
+| Proposed vs Delta-KNN | 8 | 4 | 0.388 | 0.775 | No |
+
+**Ablation analysis**
+
+- **Q(3) = 4.94, p = 0.176**
+
+| Comparison | Proposed correct / Ablation wrong | Proposed wrong / Ablation correct | Raw p | Holm-adjusted p | Significant |
+|---|---:|---:|---:|---:|:---:|
+| Proposed vs LR weighting only | 8 | 4 | 0.388 | 0.775 | No |
+| Proposed vs XGBoost shared path | 8 | 1 | 0.039 | 0.117 | No |
+| Proposed vs XGBoost shared path + gain | 4 | 2 | 0.688 | 0.775 | No |
+
+Overall, although most comparisons were not statistically significant, the discordant-pair counts generally favored the proposed method, which corrected more subjects than it worsened relative to the comparison method.
 
 ## Interpretability
 
