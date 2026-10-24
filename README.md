@@ -120,8 +120,7 @@ McNemar tests against the baselines remained non-significant after Holm correcti
 
 ## Code Availability
 
-> [!NOTE]
-> The code in this repository is provided for reproducibility during the review of the associated paper. The repository will be updated with the final, cleaned-up code, documentation and any additional experiments upon acceptance.
+The code in this repository is provided for reproducibility during the review of the associated paper. The repository will be updated with the final, cleaned-up code, documentation and any additional experiments upon acceptance.
 
 ## Get Started
 
