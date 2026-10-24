@@ -164,3 +164,11 @@ Future work will evaluate the framework on larger and external cohorts, addition
 ## Acknowledgments
 
 Data collection and sharing for this project was funded by the Alzheimer's Disease Neuroimaging Initiative (ADNI) (National Institutes of Health Grant U01 AG024904) and DOD ADNI (Department of Defense award number W81XWH-12-2-0012).
+
+## Contact
+
+For questions about the code or the paper, please contact:
+
+- **Thisara Kumarasiri** (corresponding author): S4043685@student.rmit.edu.au
+
+School of Computing Technologies, RMIT University, Melbourne, Victoria 3000, Australia
