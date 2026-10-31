@@ -123,7 +123,7 @@ Statistical significance was evaluated separately for GPT-5.4 and Grok-4.2 using
 | Proposed vs XGBoost shared path | 3 | 0 | 0.250 | 0.750 | No |
 | Proposed vs XGBoost shared path + gain | 2 | 0 | 0.500 | 1.000 | No |
 
-#### Grok-4.20-reasoning
+#### Grok-4.2
 
 **Main method comparison**
 
