@@ -66,7 +66,10 @@ const performanceLlmMethodOrder = [
 // ============================================================
 
 fetch(
-  "data/accuracy_results.json"
+  "data/accuracy_results.json",
+  {
+    cache: "no-store"
+  }
 )
 
   .then(response => {
