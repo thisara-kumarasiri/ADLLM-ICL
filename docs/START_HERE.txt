@@ -1,0 +1,31 @@
+START HERE
+
+Files:
+- index.html  -> page content
+- style.css   -> page styling
+- script.js   -> GPT/Grok interactive tabs
+
+To test with GitHub Pages:
+1. Put index.html, style.css, and script.js in the root of your GitHub repository.
+2. Commit and push them.
+3. Open the repository on GitHub.
+4. Go to Settings -> Pages.
+5. Under Build and deployment, choose "Deploy from a branch".
+6. Select your main branch and "/ (root)".
+7. Save.
+8. GitHub will show the published website URL after deployment.
+
+Later you can add a folder such as:
+
+Figures/
+  framework.png
+  consistency.png
+  ml_regions.png
+  llm_regions.png
+
+Then use an image in index.html like:
+
+<img src="Figures/framework.png" alt="Overview of the proposed framework">
+
+Important:
+GitHub Pages file and folder names are case-sensitive.

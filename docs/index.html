@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    ML-Guided Demonstration Selection for AD Classification
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script src="https://cdn.jsdelivr.net/npm/d3-sankey@0.12.3/dist/d3-sankey.min.js"></script>
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<header class="hero">
+
+  <div class="container">
+
+    <p class="eyebrow">
+      Research Project
+    </p>
+
+    <h1>
+      ML-Guided Demonstration Selection for Interpretable
+      Few-Shot Alzheimer’s Disease Classification with LLMs
+    </h1>
+
+    <p class="subtitle">
+      Lightweight machine learning guides in-context example
+      selection for LLM-based classification and natural-language
+      reasoning from MRI-derived features.
+    </p>
+
+    <p class="authors">
+      Thisara Kumarasiri · Pubudu Sanjeewani · Azadeh Alavi · Estrid He · Tabinda Sarwar
+    </p>
+
+    <p class="affiliation">
+      School of Computing Technologies, RMIT University, Melbourne, Victoria 3000, Australia
+    </p>
+
+
+    <div class="hero-actions">
+
+      <a
+        class="button primary"
+        href="#overview"
+      >
+        Dataset
+      </a>
+
+      <a
+        class="button"
+        href="#results"
+      >
+        Accuracy
+      </a>
+
+      <a
+        class="button"
+        href="#reasoning"
+      >
+        Interpretability
+      </a>
+
+      <a
+        class="button"
+        href="#citation"
+      >
+        Citation
+      </a>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+<main>
+
+<!-- =========================================================
+     ABSTRACT
+========================================================= -->
+
+<section
+  id="abstract"
+  class="section alt abstract-section"
+>
+
+  <div class="container">
+
+    <div class="section-heading standard-section-heading">
+
+      <div>
+
+        <h2>
+          Abstract
+        </h2>
+
+        <p>
+          Large language models offer a promising approach for interpretable
+          classification from structured neuroimaging biomarkers, but their
+          performance can depend strongly on the examples provided during
+          in-context learning. This study investigates a machine-learning-guided
+          demonstration-selection strategy for Alzheimer’s disease classification
+          using MRI-derived structural features. Logistic regression provides
+          global feature-importance information, while XGBoost contributes
+          subject-specific decision-path information to guide the selection of
+          informative demonstrations. The approach is evaluated using GPT-5.4
+          and Grok-4.2 and compared with zero-shot, random, similarity-based,
+          and neighbourhood-based selection strategies. In addition to
+          classification performance, the generated reasoning is evaluated
+          through consistency, regional interpretability, and directional
+          evidence analyses.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =========================================================
+     DATASET AND FEATURE EXTRACTION
+========================================================= -->
+
+<section
+  id="overview"
+  class="section"
+>
+
+  <div class="container">
+
+    <div class="section-heading standard-section-heading dataset-section-heading">
+
+      <div>
+
+        <h2>
+          Dataset and Feature Extraction
+        </h2>
+
+        <p>
+          T1-weighted structural MRI scans from the Alzheimer's Disease
+          Neuroimaging Initiative (ADNI) were processed with FreeSurfer to
+          derive regional cortical and subcortical measurements used as
+          structured inputs for the machine-learning models and LLMs.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="dataset-cards">
+
+      <article class="dataset-card">
+
+        <span class="dataset-card-label">
+          Dataset
+        </span>
+
+        <strong>
+          ADNI
+        </strong>
+
+        <p>
+          313 subjects
+          <br>
+          145 AD · 168 CN
+        </p>
+
+      </article>
+
+
+      <article class="dataset-card">
+
+        <span class="dataset-card-label">
+          MRI Data
+        </span>
+
+        <strong>
+          Baseline T1-weighted MRI
+        </strong>
+
+        <p>
+          1.5 T acquisition
+          <br>
+          One scan per subject
+        </p>
+
+      </article>
+
+
+      <article class="dataset-card">
+
+        <span class="dataset-card-label">
+          Feature Extraction
+        </span>
+
+        <strong>
+          FreeSurfer
+        </strong>
+
+        <p>
+          Desikan–Killiany cortical parcellation
+          <br>
+          Subcortical segmentation
+        </p>
+
+      </article>
+
+
+      <article class="dataset-card">
+
+        <span class="dataset-card-label">
+          Final Representation
+        </span>
+
+        <strong>
+          176 features
+        </strong>
+
+        <p>
+          59 anatomical regions
+          <br>
+          Volume · thickness · age · sex
+        </p>
+
+      </article>
+
+    </div>
+
+
+    <div class="dataset-subsection">
+
+      <div class="dataset-subsection-heading">
+
+        <h3>
+          Dataset Split
+        </h3>
+
+        <p>
+          Subjects were divided into training, validation, and test sets
+          before model evaluation.
+        </p>
+
+      </div>
+
+
+      <div class="split-cards">
+
+        <div class="split-card">
+
+          <span>
+            Training
+          </span>
+
+          <strong>
+            220
+          </strong>
+
+          <small>
+            102 AD · 118 CN
+          </small>
+
+        </div>
+
+
+        <div class="split-card">
+
+          <span>
+            Validation
+          </span>
+
+          <strong>
+            30
+          </strong>
+
+          <small>
+            14 AD · 16 CN
+          </small>
+
+        </div>
+
+
+        <div class="split-card">
+
+          <span>
+            Test
+          </span>
+
+          <strong>
+            63
+          </strong>
+
+          <small>
+            29 AD · 34 CN
+          </small>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="dataset-subsection">
+
+      <div class="dataset-subsection-heading">
+
+        <h3>
+          Processing Pipeline
+        </h3>
+
+        <p>
+          MRI data were transformed into a structured representation that
+          could be used consistently by both predictive models and LLM prompts.
+        </p>
+
+      </div>
+
+
+      <div class="dataset-flow" aria-label="MRI feature extraction pipeline">
+
+        <div class="dataset-flow-step">
+          <span>01</span>
+          <strong>ADNI MRI</strong>
+          <small>T1-weighted baseline scan</small>
+        </div>
+
+        <div class="dataset-flow-arrow" aria-hidden="true">→</div>
+
+        <div class="dataset-flow-step">
+          <span>02</span>
+          <strong>FreeSurfer</strong>
+          <small>Structural MRI processing</small>
+        </div>
+
+        <div class="dataset-flow-arrow" aria-hidden="true">→</div>
+
+        <div class="dataset-flow-step">
+          <span>03</span>
+          <strong>Regional Segmentation</strong>
+          <small>Cortical + subcortical regions</small>
+        </div>
+
+        <div class="dataset-flow-arrow" aria-hidden="true">→</div>
+
+        <div class="dataset-flow-step">
+          <span>04</span>
+          <strong>MRI Measurements</strong>
+          <small>Volume + cortical thickness</small>
+        </div>
+
+        <div class="dataset-flow-arrow" aria-hidden="true">→</div>
+
+        <div class="dataset-flow-step">
+          <span>05</span>
+          <strong>Structured Input</strong>
+          <small>176 features for ML + LLMs</small>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     RESULTS
+========================================================= -->
+
+<section
+  id="results"
+  class="section"
+>
+
+  <div class="container">
+
+
+    <div class="section-heading standard-section-heading">
+
+      <div>
+
+        <h2>
+          Classification Performance
+        </h2>
+
+        <p>
+          Classification accuracy is compared across conventional machine-learning models and LLM-based 
+          approaches using different in-context example-selection strategies. For the LLMs, the 
+          reported values are based on the final prediction obtained through majority voting across 
+          three independent runs.
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="accuracy-panel">
+
+      <!-- =====================================================
+          PERFORMANCE METRIC TABS
+      ====================================================== -->
+
+      <div
+        class="performance-metric-tabs"
+        role="tablist"
+        aria-label="Performance metric"
+      >
+
+        <button
+          class="performance-metric-tab active"
+          data-performance-metric="accuracy"
+          role="tab"
+          aria-selected="true"
+        >
+          Accuracy
+        </button>
+
+        <button
+          class="performance-metric-tab"
+          data-performance-metric="precision"
+          role="tab"
+          aria-selected="false"
+        >
+          Precision
+        </button>
+
+        <button
+          class="performance-metric-tab"
+          data-performance-metric="sensitivity"
+          role="tab"
+          aria-selected="false"
+        >
+          Sensitivity
+        </button>
+
+        <button
+          class="performance-metric-tab"
+          data-performance-metric="specificity"
+          role="tab"
+          aria-selected="false"
+        >
+          Specificity
+        </button>
+
+        <button
+          class="performance-metric-tab"
+          data-performance-metric="f1_score"
+          role="tab"
+          aria-selected="false"
+        >
+          F1-Score
+        </button>
+
+      </div>
+
+
+      <div
+        id="accuracy-chart"
+        class="accuracy-chart"
+      >
+
+        <p>
+          Loading classification results...
+        </p>
+
+      </div>
+
+
+
+      <div class="accuracy-legend">
+
+        <div class="accuracy-legend-item">
+
+          <span
+            class="accuracy-legend-box standard"
+          ></span>
+
+          <span>
+            Baseline / comparison method
+          </span>
+
+        </div>
+
+
+        <div class="accuracy-legend-item">
+
+          <span
+            class="accuracy-legend-box proposed"
+          ></span>
+
+          <span>
+            Proposed ML-guided selection
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <p
+        id="performance-metric-note"
+        class="accuracy-note"
+      >
+        Bars represent classification accuracy (%). Machine-learning
+        models are shown first, followed by GPT-5.4 and Grok-4.2.
+        All panels use the same 0–100% scale to support direct comparison.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     REASONING ANALYSIS
+========================================================= -->
+
+<section
+  id="reasoning"
+  class="section alt"
+>
+
+  <div class="container">
+    <div class="section-heading standard-section-heading">
+      <div>
+
+        <h2>
+          Interpretability Analysis
+        </h2>
+
+        <p>
+          Interpretability is assessed from multiple perspectives: logistic regression provides global feature-importance estimates, XGBoost provides gain-based importance derived from tree splits, and the LLMs provide natural-language reasoning that identifies and interprets relevant MRI-derived brain-region features.
+        </p>
+
+      </div>
+    </div>
+
+
+    <!-- =====================================================
+         REASONING CONSISTENCY
+    ====================================================== -->
+
+    <div class="reasoning-panel">
+
+      <div class="analysis-heading">
+
+        <h3>
+          Reasoning Consistency
+        </h3>
+
+        <p class="analysis-description">
+          Prediction stability and reasoning consistency across
+          models and example-selection methods.
+        </p>
+
+      </div>
+
+
+      <div class="consistency-axis-note">
+
+        <strong>
+          Columns:
+        </strong>
+
+        Reasoning consistency
+        (C = Consistent, I = Inconsistent)
+
+        &nbsp;&nbsp;|&nbsp;&nbsp;
+
+        <strong>
+          Rows:
+        </strong>
+
+        Prediction consistency
+        (C = Consistent, I = Inconsistent)
+
+      </div>
+
+
+      <div id="consistency-grid">
+        <p>
+          Loading consistency data...
+        </p>
+      </div>
+
+    </div>
+
+    <!-- =====================================================
+        REGIONAL INTERPRETABILITY
+    ====================================================== -->
+
+    <div class="reasoning-panel">
+
+
+      <div class="analysis-heading-row centered-analysis-heading">
+
+        <div>
+
+          <h3>
+            Regional Interpretability
+          </h3>
+
+          <p class="analysis-description">
+            Comparison of machine-learning regional importance with
+            brain-region mention frequency in LLM-generated reasoning.
+            The selected LLM determines which brain regions are shown
+            across both parts of the heatmap.
+          </p>
+
+        </div>
+
+
+        <div
+          class="region-tabs"
+          role="tablist"
+          aria-label="Regional interpretability model"
+        >
+
+          <button
+            class="region-tab active"
+            data-region-model="GPT-5.4"
+            role="tab"
+            aria-selected="true"
+          >
+            GPT-5.4
+          </button>
+
+          <button
+            class="region-tab"
+            data-region-model="Grok-4.2"
+            role="tab"
+            aria-selected="false"
+          >
+            Grok-4.2
+          </button>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="region-heatmap-wrap">
+
+        <div id="region-heatmap">
+
+          <p>
+            Loading regional interpretability data...
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="region-scale region-scale-combined">
+
+        <div class="region-scale-group">
+
+          <span>
+            ML relative importance
+          </span>
+
+          <div
+            class="region-scale-bar ml-scale-bar"
+          ></div>
+
+          <span>
+            0–100%
+          </span>
+
+        </div>
+
+
+        <div class="region-scale-group">
+
+          <span>
+            LLM mention frequency
+          </span>
+
+          <div
+            class="region-scale-bar llm-scale-bar"
+          ></div>
+
+          <span>
+            0–100%
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <p class="region-note">
+
+        <strong>
+          ML:
+        </strong>
+
+        values are relative regional importance (%).
+        Feature importance is aggregated by anatomical region
+        and scaled independently within each ML model so that
+        its highest-importance region equals 100.
+
+        <strong>
+          LLM:
+        </strong>
+
+        values are mean subject-level mention frequency (%),
+        calculated as the percentage of subjects for which
+        each region was mentioned in generated reasoning and
+        then averaged across repeated runs. A region is counted
+        once per subject within each run.
+
+        The ML columns display only regions present in the
+        selected LLM's reasoning.
+
+      </p>
+
+
+    </div>
+
+    <!-- =====================================================
+        DIRECTIONALITY AND PREDICTION
+    ===================================================== -->
+
+    <div class="reasoning-panel">
+
+      <div class="analysis-heading-row centered-analysis-heading">
+
+        <div>
+
+          <h3>
+            Directionality and Prediction
+          </h3>
+
+          <p class="analysis-description">
+            Flow of mentioned brain regions through their extracted
+            directional interpretations to the final model prediction.
+            Flow width represents the number of unique subjects.
+          </p>
+
+        </div>
+
+
+        <div class="sankey-controls">
+
+          <div class="sankey-control">
+
+            <label for="sankey-model">
+              Model
+            </label>
+
+            <select id="sankey-model">
+              <option value="GPT-5.4">
+                GPT-5.4
+              </option>
+
+              <option value="Grok-4.2">
+                Grok-4.2
+              </option>
+            </select>
+
+          </div>
+
+
+          <div class="sankey-control">
+
+            <label for="sankey-method">
+              Example selection
+            </label>
+
+            <select id="sankey-method">
+            </select>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="sankey-column-headings">
+
+        <span>
+          Brain Region
+        </span>
+
+        <span>
+          Direction
+        </span>
+
+        <span>
+          Prediction
+        </span>
+
+      </div>
+
+
+      <div
+        id="direction-sankey"
+        class="sankey-container"
+      >
+
+        <p>
+          Loading directionality data...
+        </p>
+
+      </div>
+
+
+      <p class="region-note">
+        Each flow represents the number of unique subjects associated
+        with a specific brain region, extracted direction, and final
+        prediction for the selected model and example-selection method.
+      </p>
+
+      <!-- =====================================================
+          SUBJECT-LEVEL DIRECTIONALITY
+      ===================================================== -->
+
+      <div class="subject-directionality">
+
+        <div class="subject-directionality-header">
+
+          <div>
+
+            <h4>
+              Subject-level Directionality
+            </h4>
+
+            <p>
+              Explore how regional directional evidence varies across
+              example-selection methods for an individual subject.
+            </p>
+
+          </div>
+
+
+          <div class="subject-selector">
+
+            <label for="direction-subject">
+              Subject
+            </label>
+
+            <select id="direction-subject">
+            </select>
+
+          </div>
+
+        </div>
+
+
+        <div id="subject-info"></div>
+
+
+        <div
+          id="subject-directionality-grid"
+          class="subject-model-grid"
+        >
+          <p>
+            Loading subject-level directionality data...
+          </p>
+        </div>
+
+
+        <div class="directionality-legend">
+
+          <div class="direction-legend-item">
+
+            <span class="direction-box direction-cn">
+              -1
+            </span>
+
+            <span>
+              Towards normal aging
+            </span>
+
+          </div>
+
+
+          <div class="direction-legend-item">
+
+            <span class="direction-box direction-neutral">
+              0
+            </span>
+
+            <span>
+              Neutral / unclear
+            </span>
+
+          </div>
+
+
+          <div class="direction-legend-item">
+
+            <span class="direction-box direction-ad">
+              +1
+            </span>
+
+            <span>
+              Towards Alzheimer's disease
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <p class="subject-directionality-note">
+          Supporting and opposing counts are determined relative to each
+          method's final prediction. A majority is considered supportive
+          when the number of supporting directional claims exceeds the
+          number of opposing claims.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CITATION
+========================================================= -->
+
+<section
+  id="citation"
+  class="section"
+>
+
+  <div class="container">
+
+  <div class="section-heading standard-section-heading">
+
+    <div>
+
+      <h2>
+        Citation
+      </h2>
+
+      <p>
+        Please use the following citation when referencing this work.
+      </p>
+
+    </div>
+
+  </div>
+
+
+    <pre><code>@inproceedings{yourpaper2027,
+  title = {Your Paper Title},
+  author = {Author One and Author Two and Author Three},
+  booktitle = {IEEE International Symposium on Biomedical Imaging},
+  year = {2027}
+}</code></pre>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+  <div class="container">
+
+    <p>
+      Project website hosted with GitHub Pages.
+    </p>
+
+  </div>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>
+

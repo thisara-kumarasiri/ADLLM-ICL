@@ -1,0 +1,1496 @@
+{
+  "metadata": {
+    "run": 1,
+    "metric": "Unique subject count",
+    "flow": "Brain region → Direction → Prediction",
+    "description": "Each flow represents the number of unique subjects for which a brain region was associated with the extracted direction and final model prediction. If multiple distinct directions were given for the same subject and region, the subject contributes once to each corresponding direction flow."
+  },
+  "models": {
+    "GPT-5.4": {
+      "Zero-shot": [
+        {
+          "region": "Entorhinal Cortex",
+          "direction": "Preserved",
+          "prediction": "Normal aging",
+          "count": 32
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Preserved",
+          "prediction": "Normal aging",
+          "count": 31
+        },
+        {
+          "region": "Lateral Ventricle",
+          "direction": "Increased",
+          "prediction": "Normal aging",
+          "count": 22
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Reduced",
+          "prediction": "Alzheimer's disease",
+          "count": 21
+        },
+        {
+          "region": "Lateral Ventricle",
+          "direction": "Increased",
+          "prediction": "Alzheimer's disease",
+          "count": 19
+        },
+        {
+          "region": "Entorhinal Cortex",
+          "direction": "Reduced",
+          "prediction": "Alzheimer's disease",
+          "count": 15
+        },
+        {
+          "region": "Whole Brain",
+          "direction": "Reduced",
+          "prediction": "Alzheimer's disease",
+          "count": 9
+        },
+        {
+          "region": "Whole Brain",
+          "direction": "Atrophic",
+          "prediction": "Alzheimer's disease",
+          "count": 6
+        },
+        {
+          "region": "Whole Brain",
+          "direction": "Reduced",
+          "prediction": "Normal aging",
+          "count": 4
+        },
+        {
+          "region": "Entorhinal Cortex",
+          "direction": "Reduced",
+          "prediction": "Normal aging",
+          "count": 3
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Reduced",
+          "prediction": "Normal aging",
+          "count": 3
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Atrophic",
+          "prediction": "Alzheimer's disease",
+          "count": 2
+        },
+        {
+          "region": "Entorhinal Cortex",
+          "direction": "Atrophic",
+          "prediction": "Normal aging",
+          "count": 1
+        },
+        {
+          "region": "Whole Brain",
+          "direction": "Atrophic",
+          "prediction": "Normal aging",
+          "count": 1
+        }
+      ],
+      "Random": [
+        {
+          "region": "Entorhinal Cortex",
+          "direction": "Preserved",
+          "prediction": "Normal aging",
+          "count": 29
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Reduced",
+          "prediction": "Alzheimer's disease",
+          "count": 27
+        },
+        {
+          "region": "Entorhinal Cortex",
+          "direction": "Reduced",
+          "prediction": "Alzheimer's disease",
+          "count": 26
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Preserved",
+          "prediction": "Normal aging",
+          "count": 17
+        },
+        {
+          "region": "Lateral Ventricle",
+          "direction": "Increased",
+          "prediction": "Alzheimer's disease",
+          "count": 16
+        },
+        {
+          "region": "Whole Brain",
+          "direction": "Preserved",
+          "prediction": "Normal aging",
+          "count": 14
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Increased",
+          "prediction": "Normal aging",
+          "count": 11
+        },
+        {
+          "region": "Lateral Ventricle",
+          "direction": "Increased",
+          "prediction": "Normal aging",
+          "count": 10
+        },
+        {
+          "region": "Whole Brain",
+          "direction": "Reduced",
+          "prediction": "Alzheimer's disease",
+          "count": 8
+        },
+        {
+          "region": "Lateral Ventricle",
+          "direction": "Preserved",
+          "prediction": "Normal aging",
+          "count": 5
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Reduced",
+          "prediction": "Normal aging",
+          "count": 4
+        },
+        {
+          "region": "Whole Brain",
+          "direction": "Atrophic",
+          "prediction": "Alzheimer's disease",
+          "count": 4
+        },
+        {
+          "region": "Whole Brain",
+          "direction": "Preserved",
+          "prediction": "Alzheimer's disease",
+          "count": 4
+        },
+        {
+          "region": "Whole Brain",
+          "direction": "Reduced",
+          "prediction": "Normal aging",
+          "count": 4
+        },
+        {
+          "region": "Entorhinal Cortex",
+          "direction": "Reduced",
+          "prediction": "Normal aging",
+          "count": 3
+        },
+        {
+          "region": "Lateral Ventricle",
+          "direction": "Reduced",
+          "prediction": "Normal aging",
+          "count": 2
+        },
+        {
+          "region": "Entorhinal Cortex",
+          "direction": "Increased",
+          "prediction": "Normal aging",
+          "count": 1
+        },
+        {
+          "region": "Entorhinal Cortex",
+          "direction": "Preserved",
+          "prediction": "Alzheimer's disease",
+          "count": 1
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Preserved",
+          "prediction": "Alzheimer's disease",
+          "count": 1
+        },
+        {
+          "region": "Whole Brain",
+          "direction": "Atrophic",
+          "prediction": "Normal aging",
+          "count": 1
+        }
+      ],
+      "Cosine": [
+        {
+          "region": "Entorhinal Cortex",
+          "direction": "Reduced",
+          "prediction": "Alzheimer's disease",
+          "count": 27
+        },
+        {
+          "region": "Entorhinal Cortex",
+          "direction": "Preserved",
+          "prediction": "Normal aging",
+          "count": 24
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Reduced",
+          "prediction": "Alzheimer's disease",
+          "count": 24
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Preserved",
+          "prediction": "Normal aging",
+          "count": 20
+        },
+        {
+          "region": "Lateral Ventricle",
+          "direction": "Increased",
+          "prediction": "Alzheimer's disease",
+          "count": 19
+        },
+        {
+          "region": "Whole Brain",
+          "direction": "Preserved",
+          "prediction": "Normal aging",
+          "count": 14
+        },
+        {
+          "region": "Whole Brain",
+          "direction": "Reduced",
+          "prediction": "Alzheimer's disease",
+          "count": 11
+        },
+        {
+          "region": "Lateral Ventricle",
+          "direction": "Increased",
+          "prediction": "Normal aging",
+          "count": 8
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Preserved",
+          "prediction": "Alzheimer's disease",
+          "count": 5
+        },
+        {
+          "region": "Whole Brain",
+          "direction": "Atrophic",
+          "prediction": "Alzheimer's disease",
+          "count": 5
+        },
+        {
+          "region": "Lateral Ventricle",
+          "direction": "Preserved",
+          "prediction": "Normal aging",
+          "count": 4
+        },
+        {
+          "region": "Whole Brain",
+          "direction": "Preserved",
+          "prediction": "Alzheimer's disease",
+          "count": 4
+        },
+        {
+          "region": "Entorhinal Cortex",
+          "direction": "Reduced",
+          "prediction": "Normal aging",
+          "count": 3
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Increased",
+          "prediction": "Normal aging",
+          "count": 3
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Reduced",
+          "prediction": "Normal aging",
+          "count": 3
+        },
+        {
+          "region": "Whole Brain",
+          "direction": "Atrophic",
+          "prediction": "Normal aging",
+          "count": 3
+        },
+        {
+          "region": "Entorhinal Cortex",
+          "direction": "Preserved",
+          "prediction": "Alzheimer's disease",
+          "count": 2
+        },
+        {
+          "region": "Whole Brain",
+          "direction": "Reduced",
+          "prediction": "Normal aging",
+          "count": 2
+        },
+        {
+          "region": "Entorhinal Cortex",
+          "direction": "Atrophic",
+          "prediction": "Normal aging",
+          "count": 1
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Asymmetry",
+          "prediction": "Normal aging",
+          "count": 1
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Atrophic",
+          "prediction": "Alzheimer's disease",
+          "count": 1
+        }
+      ],
+      "Euclidean": [
+        {
+          "region": "Entorhinal Cortex",
+          "direction": "Preserved",
+          "prediction": "Normal aging",
+          "count": 28
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Preserved",
+          "prediction": "Normal aging",
+          "count": 24
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Reduced",
+          "prediction": "Alzheimer's disease",
+          "count": 24
+        },
+        {
+          "region": "Entorhinal Cortex",
+          "direction": "Reduced",
+          "prediction": "Alzheimer's disease",
+          "count": 23
+        },
+        {
+          "region": "Lateral Ventricle",
+          "direction": "Increased",
+          "prediction": "Alzheimer's disease",
+          "count": 17
+        },
+        {
+          "region": "Lateral Ventricle",
+          "direction": "Increased",
+          "prediction": "Normal aging",
+          "count": 15
+        },
+        {
+          "region": "Whole Brain",
+          "direction": "Reduced",
+          "prediction": "Alzheimer's disease",
+          "count": 14
+        },
+        {
+          "region": "Whole Brain",
+          "direction": "Preserved",
+          "prediction": "Normal aging",
+          "count": 12
+        },
+        {
+          "region": "Whole Brain",
+          "direction": "Atrophic",
+          "prediction": "Alzheimer's disease",
+          "count": 6
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Increased",
+          "prediction": "Normal aging",
+          "count": 5
+        },
+        {
+          "region": "Whole Brain",
+          "direction": "Preserved",
+          "prediction": "Alzheimer's disease",
+          "count": 4
+        },
+        {
+          "region": "Entorhinal Cortex",
+          "direction": "Reduced",
+          "prediction": "Normal aging",
+          "count": 3
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Reduced",
+          "prediction": "Normal aging",
+          "count": 3
+        },
+        {
+          "region": "Entorhinal Cortex",
+          "direction": "Atrophic",
+          "prediction": "Alzheimer's disease",
+          "count": 2
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Preserved",
+          "prediction": "Alzheimer's disease",
+          "count": 2
+        },
+        {
+          "region": "Whole Brain",
+          "direction": "Atrophic",
+          "prediction": "Normal aging",
+          "count": 2
+        },
+        {
+          "region": "Whole Brain",
+          "direction": "Increased",
+          "prediction": "Normal aging",
+          "count": 2
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Atrophic",
+          "prediction": "Alzheimer's disease",
+          "count": 1
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Atrophic",
+          "prediction": "Normal aging",
+          "count": 1
+        },
+        {
+          "region": "Whole Brain",
+          "direction": "Reduced",
+          "prediction": "Normal aging",
+          "count": 1
+        }
+      ],
+      "Delta-KNN": [
+        {
+          "region": "Entorhinal Cortex",
+          "direction": "Preserved",
+          "prediction": "Normal aging",
+          "count": 29
+        },
+        {
+          "region": "Whole Brain",
+          "direction": "Preserved",
+          "prediction": "Normal aging",
+          "count": 23
+        },
+        {
+          "region": "Entorhinal Cortex",
+          "direction": "Reduced",
+          "prediction": "Alzheimer's disease",
+          "count": 22
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Reduced",
+          "prediction": "Alzheimer's disease",
+          "count": 22
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Preserved",
+          "prediction": "Normal aging",
+          "count": 19
+        },
+        {
+          "region": "Lateral Ventricle",
+          "direction": "Increased",
+          "prediction": "Alzheimer's disease",
+          "count": 18
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Increased",
+          "prediction": "Normal aging",
+          "count": 10
+        },
+        {
+          "region": "Whole Brain",
+          "direction": "Reduced",
+          "prediction": "Alzheimer's disease",
+          "count": 10
+        },
+        {
+          "region": "Lateral Ventricle",
+          "direction": "Preserved",
+          "prediction": "Normal aging",
+          "count": 6
+        },
+        {
+          "region": "Lateral Ventricle",
+          "direction": "Reduced",
+          "prediction": "Normal aging",
+          "count": 6
+        },
+        {
+          "region": "Lateral Ventricle",
+          "direction": "Increased",
+          "prediction": "Normal aging",
+          "count": 5
+        },
+        {
+          "region": "Entorhinal Cortex",
+          "direction": "Reduced",
+          "prediction": "Normal aging",
+          "count": 4
+        },
+        {
+          "region": "Whole Brain",
+          "direction": "Atrophic",
+          "prediction": "Alzheimer's disease",
+          "count": 4
+        },
+        {
+          "region": "Entorhinal Cortex",
+          "direction": "Atrophic",
+          "prediction": "Alzheimer's disease",
+          "count": 3
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Atrophic",
+          "prediction": "Alzheimer's disease",
+          "count": 3
+        },
+        {
+          "region": "Whole Brain",
+          "direction": "Preserved",
+          "prediction": "Alzheimer's disease",
+          "count": 3
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Reduced",
+          "prediction": "Normal aging",
+          "count": 2
+        },
+        {
+          "region": "Entorhinal Cortex",
+          "direction": "Atrophic",
+          "prediction": "Normal aging",
+          "count": 1
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Atrophic",
+          "prediction": "Normal aging",
+          "count": 1
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Preserved",
+          "prediction": "Alzheimer's disease",
+          "count": 1
+        },
+        {
+          "region": "Whole Brain",
+          "direction": "Increased",
+          "prediction": "Alzheimer's disease",
+          "count": 1
+        },
+        {
+          "region": "Whole Brain",
+          "direction": "Reduced",
+          "prediction": "Normal aging",
+          "count": 1
+        }
+      ],
+      "Proposed": [
+        {
+          "region": "Hippocampus",
+          "direction": "Preserved",
+          "prediction": "Normal aging",
+          "count": 33
+        },
+        {
+          "region": "Entorhinal Cortex",
+          "direction": "Preserved",
+          "prediction": "Normal aging",
+          "count": 31
+        },
+        {
+          "region": "Entorhinal Cortex",
+          "direction": "Reduced",
+          "prediction": "Alzheimer's disease",
+          "count": 24
+        },
+        {
+          "region": "Whole Brain",
+          "direction": "Preserved",
+          "prediction": "Normal aging",
+          "count": 22
+        },
+        {
+          "region": "Lateral Ventricle",
+          "direction": "Increased",
+          "prediction": "Normal aging",
+          "count": 20
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Reduced",
+          "prediction": "Alzheimer's disease",
+          "count": 18
+        },
+        {
+          "region": "Lateral Ventricle",
+          "direction": "Increased",
+          "prediction": "Alzheimer's disease",
+          "count": 13
+        },
+        {
+          "region": "Whole Brain",
+          "direction": "Reduced",
+          "prediction": "Alzheimer's disease",
+          "count": 10
+        },
+        {
+          "region": "Whole Brain",
+          "direction": "Atrophic",
+          "prediction": "Alzheimer's disease",
+          "count": 7
+        },
+        {
+          "region": "Entorhinal Cortex",
+          "direction": "Reduced",
+          "prediction": "Normal aging",
+          "count": 4
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Preserved",
+          "prediction": "Alzheimer's disease",
+          "count": 2
+        },
+        {
+          "region": "Lateral Ventricle",
+          "direction": "Preserved",
+          "prediction": "Normal aging",
+          "count": 2
+        },
+        {
+          "region": "Whole Brain",
+          "direction": "Preserved",
+          "prediction": "Alzheimer's disease",
+          "count": 2
+        },
+        {
+          "region": "Whole Brain",
+          "direction": "Reduced",
+          "prediction": "Normal aging",
+          "count": 2
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Atrophic",
+          "prediction": "Alzheimer's disease",
+          "count": 1
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Increased",
+          "prediction": "Normal aging",
+          "count": 1
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Reduced",
+          "prediction": "Normal aging",
+          "count": 1
+        },
+        {
+          "region": "Whole Brain",
+          "direction": "Atrophic",
+          "prediction": "Normal aging",
+          "count": 1
+        },
+        {
+          "region": "Whole Brain",
+          "direction": "Increased",
+          "prediction": "Normal aging",
+          "count": 1
+        }
+      ]
+    },
+    "Grok-4.2": {
+      "Zero-shot": [
+        {
+          "region": "Lateral Ventricle",
+          "direction": "Increased",
+          "prediction": "Alzheimer's disease",
+          "count": 40
+        },
+        {
+          "region": "Whole Brain",
+          "direction": "Reduced",
+          "prediction": "Alzheimer's disease",
+          "count": 34
+        },
+        {
+          "region": "Entorhinal Cortex",
+          "direction": "Reduced",
+          "prediction": "Alzheimer's disease",
+          "count": 30
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Reduced",
+          "prediction": "Alzheimer's disease",
+          "count": 30
+        },
+        {
+          "region": "Lateral Ventricle",
+          "direction": "Increased",
+          "prediction": "Normal aging",
+          "count": 15
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Preserved",
+          "prediction": "Normal aging",
+          "count": 12
+        },
+        {
+          "region": "Entorhinal Cortex",
+          "direction": "Preserved",
+          "prediction": "Normal aging",
+          "count": 11
+        },
+        {
+          "region": "Entorhinal Cortex",
+          "direction": "Preserved",
+          "prediction": "Alzheimer's disease",
+          "count": 10
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Atrophic",
+          "prediction": "Alzheimer's disease",
+          "count": 7
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Preserved",
+          "prediction": "Alzheimer's disease",
+          "count": 6
+        },
+        {
+          "region": "Whole Brain",
+          "direction": "Atrophic",
+          "prediction": "Normal aging",
+          "count": 4
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Asymmetry",
+          "prediction": "Alzheimer's disease",
+          "count": 3
+        },
+        {
+          "region": "Whole Brain",
+          "direction": "Atrophic",
+          "prediction": "Alzheimer's disease",
+          "count": 3
+        },
+        {
+          "region": "Entorhinal Cortex",
+          "direction": "Atrophic",
+          "prediction": "Alzheimer's disease",
+          "count": 2
+        },
+        {
+          "region": "Whole Brain",
+          "direction": "Reduced",
+          "prediction": "Normal aging",
+          "count": 2
+        },
+        {
+          "region": "Entorhinal Cortex",
+          "direction": "Asymmetry",
+          "prediction": "Normal aging",
+          "count": 1
+        },
+        {
+          "region": "Entorhinal Cortex",
+          "direction": "Atrophic",
+          "prediction": "Normal aging",
+          "count": 1
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Atrophic",
+          "prediction": "Normal aging",
+          "count": 1
+        }
+      ],
+      "Random": [
+        {
+          "region": "Lateral Ventricle",
+          "direction": "Increased",
+          "prediction": "Alzheimer's disease",
+          "count": 25
+        },
+        {
+          "region": "Entorhinal Cortex",
+          "direction": "Reduced",
+          "prediction": "Alzheimer's disease",
+          "count": 21
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Reduced",
+          "prediction": "Alzheimer's disease",
+          "count": 21
+        },
+        {
+          "region": "Entorhinal Cortex",
+          "direction": "Preserved",
+          "prediction": "Normal aging",
+          "count": 16
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Preserved",
+          "prediction": "Normal aging",
+          "count": 13
+        },
+        {
+          "region": "Lateral Ventricle",
+          "direction": "Increased",
+          "prediction": "Normal aging",
+          "count": 8
+        },
+        {
+          "region": "Whole Brain",
+          "direction": "Reduced",
+          "prediction": "Alzheimer's disease",
+          "count": 8
+        },
+        {
+          "region": "Whole Brain",
+          "direction": "Preserved",
+          "prediction": "Normal aging",
+          "count": 7
+        },
+        {
+          "region": "Whole Brain",
+          "direction": "Preserved",
+          "prediction": "Alzheimer's disease",
+          "count": 6
+        },
+        {
+          "region": "Entorhinal Cortex",
+          "direction": "Atrophic",
+          "prediction": "Alzheimer's disease",
+          "count": 4
+        },
+        {
+          "region": "Whole Brain",
+          "direction": "Atrophic",
+          "prediction": "Normal aging",
+          "count": 4
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Atrophic",
+          "prediction": "Normal aging",
+          "count": 3
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Preserved",
+          "prediction": "Alzheimer's disease",
+          "count": 3
+        },
+        {
+          "region": "Lateral Ventricle",
+          "direction": "Reduced",
+          "prediction": "Normal aging",
+          "count": 3
+        },
+        {
+          "region": "Whole Brain",
+          "direction": "Atrophic",
+          "prediction": "Alzheimer's disease",
+          "count": 3
+        },
+        {
+          "region": "Entorhinal Cortex",
+          "direction": "Reduced",
+          "prediction": "Normal aging",
+          "count": 2
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Atrophic",
+          "prediction": "Alzheimer's disease",
+          "count": 2
+        },
+        {
+          "region": "Lateral Ventricle",
+          "direction": "Atrophic",
+          "prediction": "Normal aging",
+          "count": 2
+        },
+        {
+          "region": "Lateral Ventricle",
+          "direction": "Preserved",
+          "prediction": "Normal aging",
+          "count": 2
+        },
+        {
+          "region": "Entorhinal Cortex",
+          "direction": "Atrophic",
+          "prediction": "Normal aging",
+          "count": 1
+        },
+        {
+          "region": "Lateral Ventricle",
+          "direction": "Preserved",
+          "prediction": "Alzheimer's disease",
+          "count": 1
+        }
+      ],
+      "Cosine": [
+        {
+          "region": "Lateral Ventricle",
+          "direction": "Increased",
+          "prediction": "Alzheimer's disease",
+          "count": 22
+        },
+        {
+          "region": "Entorhinal Cortex",
+          "direction": "Reduced",
+          "prediction": "Alzheimer's disease",
+          "count": 19
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Reduced",
+          "prediction": "Alzheimer's disease",
+          "count": 17
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Preserved",
+          "prediction": "Normal aging",
+          "count": 13
+        },
+        {
+          "region": "Entorhinal Cortex",
+          "direction": "Preserved",
+          "prediction": "Normal aging",
+          "count": 12
+        },
+        {
+          "region": "Whole Brain",
+          "direction": "Reduced",
+          "prediction": "Alzheimer's disease",
+          "count": 8
+        },
+        {
+          "region": "Lateral Ventricle",
+          "direction": "Increased",
+          "prediction": "Normal aging",
+          "count": 6
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Preserved",
+          "prediction": "Alzheimer's disease",
+          "count": 4
+        },
+        {
+          "region": "Lateral Ventricle",
+          "direction": "Preserved",
+          "prediction": "Normal aging",
+          "count": 4
+        },
+        {
+          "region": "Entorhinal Cortex",
+          "direction": "Preserved",
+          "prediction": "Alzheimer's disease",
+          "count": 3
+        },
+        {
+          "region": "Entorhinal Cortex",
+          "direction": "Reduced",
+          "prediction": "Normal aging",
+          "count": 3
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Atrophic",
+          "prediction": "Alzheimer's disease",
+          "count": 3
+        },
+        {
+          "region": "Whole Brain",
+          "direction": "Atrophic",
+          "prediction": "Alzheimer's disease",
+          "count": 3
+        },
+        {
+          "region": "Whole Brain",
+          "direction": "Preserved",
+          "prediction": "Alzheimer's disease",
+          "count": 3
+        },
+        {
+          "region": "Whole Brain",
+          "direction": "Preserved",
+          "prediction": "Normal aging",
+          "count": 3
+        },
+        {
+          "region": "Entorhinal Cortex",
+          "direction": "Atrophic",
+          "prediction": "Alzheimer's disease",
+          "count": 2
+        },
+        {
+          "region": "Entorhinal Cortex",
+          "direction": "Atrophic",
+          "prediction": "Normal aging",
+          "count": 1
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Asymmetry",
+          "prediction": "Alzheimer's disease",
+          "count": 1
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Atrophic",
+          "prediction": "Normal aging",
+          "count": 1
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Increased",
+          "prediction": "Normal aging",
+          "count": 1
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Reduced",
+          "prediction": "Normal aging",
+          "count": 1
+        },
+        {
+          "region": "Lateral Ventricle",
+          "direction": "Reduced",
+          "prediction": "Normal aging",
+          "count": 1
+        },
+        {
+          "region": "Whole Brain",
+          "direction": "Atrophic",
+          "prediction": "Normal aging",
+          "count": 1
+        }
+      ],
+      "Euclidean": [
+        {
+          "region": "Entorhinal Cortex",
+          "direction": "Reduced",
+          "prediction": "Alzheimer's disease",
+          "count": 17
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Preserved",
+          "prediction": "Normal aging",
+          "count": 16
+        },
+        {
+          "region": "Entorhinal Cortex",
+          "direction": "Preserved",
+          "prediction": "Normal aging",
+          "count": 14
+        },
+        {
+          "region": "Lateral Ventricle",
+          "direction": "Increased",
+          "prediction": "Normal aging",
+          "count": 14
+        },
+        {
+          "region": "Lateral Ventricle",
+          "direction": "Increased",
+          "prediction": "Alzheimer's disease",
+          "count": 12
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Preserved",
+          "prediction": "Alzheimer's disease",
+          "count": 9
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Reduced",
+          "prediction": "Alzheimer's disease",
+          "count": 8
+        },
+        {
+          "region": "Whole Brain",
+          "direction": "Reduced",
+          "prediction": "Alzheimer's disease",
+          "count": 6
+        },
+        {
+          "region": "Lateral Ventricle",
+          "direction": "Reduced",
+          "prediction": "Normal aging",
+          "count": 4
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Atrophic",
+          "prediction": "Alzheimer's disease",
+          "count": 3
+        },
+        {
+          "region": "Entorhinal Cortex",
+          "direction": "Preserved",
+          "prediction": "Alzheimer's disease",
+          "count": 2
+        },
+        {
+          "region": "Entorhinal Cortex",
+          "direction": "Reduced",
+          "prediction": "Normal aging",
+          "count": 2
+        },
+        {
+          "region": "Whole Brain",
+          "direction": "Atrophic",
+          "prediction": "Alzheimer's disease",
+          "count": 2
+        },
+        {
+          "region": "Whole Brain",
+          "direction": "Preserved",
+          "prediction": "Alzheimer's disease",
+          "count": 2
+        },
+        {
+          "region": "Whole Brain",
+          "direction": "Preserved",
+          "prediction": "Normal aging",
+          "count": 2
+        },
+        {
+          "region": "Entorhinal Cortex",
+          "direction": "Atrophic",
+          "prediction": "Alzheimer's disease",
+          "count": 1
+        },
+        {
+          "region": "Entorhinal Cortex",
+          "direction": "Increased",
+          "prediction": "Alzheimer's disease",
+          "count": 1
+        },
+        {
+          "region": "Entorhinal Cortex",
+          "direction": "Increased",
+          "prediction": "Normal aging",
+          "count": 1
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Asymmetry",
+          "prediction": "Alzheimer's disease",
+          "count": 1
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Increased",
+          "prediction": "Normal aging",
+          "count": 1
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Reduced",
+          "prediction": "Normal aging",
+          "count": 1
+        },
+        {
+          "region": "Lateral Ventricle",
+          "direction": "Preserved",
+          "prediction": "Alzheimer's disease",
+          "count": 1
+        },
+        {
+          "region": "Lateral Ventricle",
+          "direction": "Preserved",
+          "prediction": "Normal aging",
+          "count": 1
+        },
+        {
+          "region": "Whole Brain",
+          "direction": "Reduced",
+          "prediction": "Normal aging",
+          "count": 1
+        }
+      ],
+      "Delta-KNN": [
+        {
+          "region": "Entorhinal Cortex",
+          "direction": "Preserved",
+          "prediction": "Normal aging",
+          "count": 19
+        },
+        {
+          "region": "Lateral Ventricle",
+          "direction": "Increased",
+          "prediction": "Alzheimer's disease",
+          "count": 16
+        },
+        {
+          "region": "Entorhinal Cortex",
+          "direction": "Reduced",
+          "prediction": "Alzheimer's disease",
+          "count": 15
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Reduced",
+          "prediction": "Alzheimer's disease",
+          "count": 11
+        },
+        {
+          "region": "Lateral Ventricle",
+          "direction": "Reduced",
+          "prediction": "Normal aging",
+          "count": 10
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Preserved",
+          "prediction": "Normal aging",
+          "count": 9
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Increased",
+          "prediction": "Normal aging",
+          "count": 8
+        },
+        {
+          "region": "Whole Brain",
+          "direction": "Preserved",
+          "prediction": "Alzheimer's disease",
+          "count": 6
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Atrophic",
+          "prediction": "Alzheimer's disease",
+          "count": 5
+        },
+        {
+          "region": "Whole Brain",
+          "direction": "Preserved",
+          "prediction": "Normal aging",
+          "count": 5
+        },
+        {
+          "region": "Lateral Ventricle",
+          "direction": "Preserved",
+          "prediction": "Normal aging",
+          "count": 4
+        },
+        {
+          "region": "Whole Brain",
+          "direction": "Atrophic",
+          "prediction": "Alzheimer's disease",
+          "count": 4
+        },
+        {
+          "region": "Whole Brain",
+          "direction": "Atrophic",
+          "prediction": "Normal aging",
+          "count": 4
+        },
+        {
+          "region": "Whole Brain",
+          "direction": "Reduced",
+          "prediction": "Alzheimer's disease",
+          "count": 4
+        },
+        {
+          "region": "Entorhinal Cortex",
+          "direction": "Atrophic",
+          "prediction": "Alzheimer's disease",
+          "count": 3
+        },
+        {
+          "region": "Entorhinal Cortex",
+          "direction": "Reduced",
+          "prediction": "Normal aging",
+          "count": 3
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Atrophic",
+          "prediction": "Normal aging",
+          "count": 3
+        },
+        {
+          "region": "Entorhinal Cortex",
+          "direction": "Increased",
+          "prediction": "Normal aging",
+          "count": 2
+        },
+        {
+          "region": "Lateral Ventricle",
+          "direction": "Increased",
+          "prediction": "Normal aging",
+          "count": 2
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Increased",
+          "prediction": "Alzheimer's disease",
+          "count": 1
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Preserved",
+          "prediction": "Alzheimer's disease",
+          "count": 1
+        }
+      ],
+      "Proposed": [
+        {
+          "region": "Lateral Ventricle",
+          "direction": "Increased",
+          "prediction": "Alzheimer's disease",
+          "count": 23
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Preserved",
+          "prediction": "Normal aging",
+          "count": 19
+        },
+        {
+          "region": "Entorhinal Cortex",
+          "direction": "Preserved",
+          "prediction": "Normal aging",
+          "count": 14
+        },
+        {
+          "region": "Entorhinal Cortex",
+          "direction": "Reduced",
+          "prediction": "Alzheimer's disease",
+          "count": 14
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Reduced",
+          "prediction": "Alzheimer's disease",
+          "count": 14
+        },
+        {
+          "region": "Lateral Ventricle",
+          "direction": "Increased",
+          "prediction": "Normal aging",
+          "count": 9
+        },
+        {
+          "region": "Whole Brain",
+          "direction": "Preserved",
+          "prediction": "Normal aging",
+          "count": 8
+        },
+        {
+          "region": "Whole Brain",
+          "direction": "Reduced",
+          "prediction": "Alzheimer's disease",
+          "count": 5
+        },
+        {
+          "region": "Whole Brain",
+          "direction": "Atrophic",
+          "prediction": "Alzheimer's disease",
+          "count": 4
+        },
+        {
+          "region": "Whole Brain",
+          "direction": "Atrophic",
+          "prediction": "Normal aging",
+          "count": 3
+        },
+        {
+          "region": "Whole Brain",
+          "direction": "Preserved",
+          "prediction": "Alzheimer's disease",
+          "count": 3
+        },
+        {
+          "region": "Entorhinal Cortex",
+          "direction": "Atrophic",
+          "prediction": "Alzheimer's disease",
+          "count": 2
+        },
+        {
+          "region": "Entorhinal Cortex",
+          "direction": "Preserved",
+          "prediction": "Alzheimer's disease",
+          "count": 2
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Atrophic",
+          "prediction": "Normal aging",
+          "count": 2
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Preserved",
+          "prediction": "Alzheimer's disease",
+          "count": 2
+        },
+        {
+          "region": "Lateral Ventricle",
+          "direction": "Preserved",
+          "prediction": "Normal aging",
+          "count": 2
+        },
+        {
+          "region": "Entorhinal Cortex",
+          "direction": "Reduced",
+          "prediction": "Normal aging",
+          "count": 1
+        },
+        {
+          "region": "Hippocampus",
+          "direction": "Reduced",
+          "prediction": "Normal aging",
+          "count": 1
+        },
+        {
+          "region": "Lateral Ventricle",
+          "direction": "Reduced",
+          "prediction": "Normal aging",
+          "count": 1
+        },
+        {
+          "region": "Whole Brain",
+          "direction": "Reduced",
+          "prediction": "Normal aging",
+          "count": 1
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,144 @@
+{
+  "metadata": {
+    "unit": "%",
+    "description": "Classification performance on the held-out test set. LLM metrics are calculated from final predictions obtained through majority voting across three independent runs."
+  },
+  
+  "metrics": {
+
+    "accuracy": {
+      "ml": {
+        "Logistic Regression": 87.30,
+        "XGBoost": 87.30
+      },
+
+      "llm": {
+        "GPT-5.4": {
+          "Zero-shot": 84.13,
+          "Random": 84.13,
+          "Cosine": 73.02,
+          "Euclidean": 84.13,
+          "Delta-KNN": 85.71,
+          "Proposed": 90.48
+        },
+
+        "Grok-4.2": {
+          "Zero-shot": 68.25,
+          "Random": 76.19,
+          "Cosine": 71.43,
+          "Euclidean": 82.54,
+          "Delta-KNN": 79.36,
+          "Proposed": 85.71
+        }
+      }
+    },
+
+    "sensitivity": {
+      "ml": {
+        "Logistic Regression": 87.30,
+        "XGBoost": 87.30
+      },
+
+      "llm": {
+        "GPT-5.4": {
+          "Zero-shot": 84.13,
+          "Random": 84.13,
+          "Cosine": 73.02,
+          "Euclidean": 84.13,
+          "Delta-KNN": 85.71,
+          "Proposed": 90.48
+        },
+
+        "Grok-4.2": {
+          "Zero-shot": 68.25,
+          "Random": 76.19,
+          "Cosine": 71.43,
+          "Euclidean": 82.54,
+          "Delta-KNN": 79.36,
+          "Proposed": 85.71
+        }
+      }
+    },
+
+    "specificity": {
+      "ml": {
+        "Logistic Regression": 87.30,
+        "XGBoost": 87.30
+      },
+
+      "llm": {
+        "GPT-5.4": {
+          "Zero-shot": 84.13,
+          "Random": 84.13,
+          "Cosine": 73.02,
+          "Euclidean": 84.13,
+          "Delta-KNN": 85.71,
+          "Proposed": 90.48
+        },
+
+        "Grok-4.2": {
+          "Zero-shot": 68.25,
+          "Random": 76.19,
+          "Cosine": 71.43,
+          "Euclidean": 82.54,
+          "Delta-KNN": 79.36,
+          "Proposed": 85.71
+        }
+      }
+    },
+
+    "f1_score": {
+      "ml": {
+        "Logistic Regression": 87.30,
+        "XGBoost": 87.30
+      },
+
+      "llm": {
+        "GPT-5.4": {
+          "Zero-shot": 84.13,
+          "Random": 84.13,
+          "Cosine": 73.02,
+          "Euclidean": 84.13,
+          "Delta-KNN": 85.71,
+          "Proposed": 90.48
+        },
+
+        "Grok-4.2": {
+          "Zero-shot": 68.25,
+          "Random": 76.19,
+          "Cosine": 71.43,
+          "Euclidean": 82.54,
+          "Delta-KNN": 79.36,
+          "Proposed": 85.71
+        }
+      }
+    },
+
+    "precision": {
+      "ml": {
+        "Logistic Regression": 87.30,
+        "XGBoost": 87.30
+      },
+
+      "llm": {
+        "GPT-5.4": {
+          "Zero-shot": 84.13,
+          "Random": 84.13,
+          "Cosine": 73.02,
+          "Euclidean": 84.13,
+          "Delta-KNN": 85.71,
+          "Proposed": 90.48
+        },
+
+        "Grok-4.2": {
+          "Zero-shot": 68.25,
+          "Random": 76.19,
+          "Cosine": 71.43,
+          "Euclidean": 82.54,
+          "Delta-KNN": 79.36,
+          "Proposed": 85.71
+        }
+      }
+    }
+  }
+}
