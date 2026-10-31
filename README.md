@@ -218,7 +218,7 @@ Future work will evaluate the framework on larger and external cohorts, addition
 ```bibtex
 @inproceedings{kumarasiri2026mlguided,
   title     = {Improving Demonstration Selection for Interpretable LLM-Based Alzheimer's Disease Classification from MRI-Derived Features},
-  author    = {Kumarasiri, Thisara and He, Estrid and Alavi, Azadeh and Sarwar, Tabinda and Sanjeewani, Pubudu},
+  author    = {Kumarasiri, Thisara and Sanjeewani, Pubudu and Alavi, Azadeh and He, Estrid  and Sarwar, Tabinda},
   year      = {2026}
 }
 ```
