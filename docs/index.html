@@ -116,20 +116,23 @@
         </h2>
 
         <p>
-          Large language models offer a promising approach for interpretable
-          classification from structured neuroimaging biomarkers, but their
-          performance can depend strongly on the examples provided during
-          in-context learning. This study investigates a machine-learning-guided
-          demonstration-selection strategy for Alzheimer’s disease classification
-          using MRI-derived structural features. Logistic regression provides
-          global feature-importance information, while XGBoost contributes
-          subject-specific decision-path information to guide the selection of
-          informative demonstrations. The approach is evaluated using GPT-5.4
-          and Grok-4.2 and compared with zero-shot, random, similarity-based,
-          and neighbourhood-based selection strategies. In addition to
-          classification performance, the generated reasoning is evaluated
-          through consistency, regional interpretability, and directional
-          evidence analyses.
+          Machine-learning (ML) models can effectively classify Alzheimer’s disease (AD) using 
+          MRI-derived structural features, but they provide limited explanation of how multiple 
+          anatomical measurements contribute to individual predictions. Large language models 
+          (LLMs) can complement these models by generating both predictions and natural-language 
+          reasoning from structured neuroimaging measurements. However, the effectiveness of 
+          few-shot in-context learning depends strongly on the examples selected for each query.
+
+          This study proposes an ML-guided demonstration-selection strategy that uses discriminative 
+          information learned from labeled data to identify informative in-context examples. The 
+          approach combines global feature importance from logistic regression with gain-based 
+          information from XGBoost and is evaluated against zero-shot, random, similarity-based, 
+          and model-aware selection strategies on the ADNI dataset.
+
+          Using GPT-5.4 and Grok-4.2, the proposed method achieved the highest classification accuracy. 
+          Analysis of the generated reasoning also showed broader coverage of biologically relevant 
+          brain regions and generally appropriate directional interpretations of anatomical changes 
+          associated with Alzheimer’s disease.
         </p>
 
       </div>
@@ -243,7 +246,7 @@
         <p>
           59 anatomical regions
           <br>
-          Volume · thickness · age · sex
+          Volume · Cortical thickness · Age · Gender
         </p>
 
       </article>
