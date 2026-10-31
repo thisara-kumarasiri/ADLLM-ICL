@@ -16,7 +16,7 @@
         "GPT-5.4": {
           "Zero-shot": 84.13,
           "Random": 84.13,
-          "Cosine": 73.02,
+          "Cosine": 76.19,
           "Euclidean": 84.13,
           "Delta-KNN": 85.71,
           "Proposed": 90.48
@@ -35,108 +35,108 @@
 
     "sensitivity": {
       "ml": {
-        "Logistic Regression": 87.30,
-        "XGBoost": 87.30
+        "Logistic Regression": 89.66,
+        "XGBoost": 86.21
       },
 
       "llm": {
         "GPT-5.4": {
-          "Zero-shot": 84.13,
-          "Random": 84.13,
-          "Cosine": 73.02,
-          "Euclidean": 84.13,
-          "Delta-KNN": 85.71,
-          "Proposed": 90.48
+          "Zero-shot": 79.31,
+          "Random": 75.86,
+          "Cosine": 75.86,
+          "Euclidean": 86.21,
+          "Delta-KNN": 82.76,
+          "Proposed": 82.76
         },
 
         "Grok-4.2": {
-          "Zero-shot": 68.25,
-          "Random": 76.19,
-          "Cosine": 71.43,
-          "Euclidean": 82.54,
-          "Delta-KNN": 79.36,
-          "Proposed": 85.71
+          "Zero-shot": 96.55,
+          "Random": 89.66,
+          "Cosine": 96.55,
+          "Euclidean": 86.21,
+          "Delta-KNN": 82.76,
+          "Proposed": 89.66
         }
       }
     },
 
     "specificity": {
       "ml": {
-        "Logistic Regression": 87.30,
-        "XGBoost": 87.30
+        "Logistic Regression": 85.29,
+        "XGBoost": 88.24
       },
 
       "llm": {
         "GPT-5.4": {
-          "Zero-shot": 84.13,
-          "Random": 84.13,
-          "Cosine": 73.02,
-          "Euclidean": 84.13,
-          "Delta-KNN": 85.71,
-          "Proposed": 90.48
+          "Zero-shot": 88.23,
+          "Random": 91.18,
+          "Cosine": 76.47,
+          "Euclidean": 82.35,
+          "Delta-KNN": 88.23,
+          "Proposed": 97.06
         },
 
         "Grok-4.2": {
-          "Zero-shot": 68.25,
-          "Random": 76.19,
-          "Cosine": 71.43,
-          "Euclidean": 82.54,
-          "Delta-KNN": 79.36,
-          "Proposed": 85.71
+          "Zero-shot": 44.12,
+          "Random": 64.71,
+          "Cosine": 50.00,
+          "Euclidean": 79.41,
+          "Delta-KNN": 76.47,
+          "Proposed": 82.35
         }
       }
     },
 
     "f1_score": {
       "ml": {
-        "Logistic Regression": 87.30,
-        "XGBoost": 87.30
+        "Logistic Regression": 86.67,
+        "XGBoost": 86.21
       },
 
       "llm": {
         "GPT-5.4": {
-          "Zero-shot": 84.13,
-          "Random": 84.13,
-          "Cosine": 73.02,
-          "Euclidean": 84.13,
-          "Delta-KNN": 85.71,
-          "Proposed": 90.48
+          "Zero-shot": 82.14,
+          "Random": 81.48,
+          "Cosine": 74.58,
+          "Euclidean": 83.33,
+          "Delta-KNN": 84.21,
+          "Proposed": 88.89
         },
 
         "Grok-4.2": {
-          "Zero-shot": 68.25,
-          "Random": 76.19,
-          "Cosine": 71.43,
-          "Euclidean": 82.54,
-          "Delta-KNN": 79.36,
-          "Proposed": 85.71
+          "Zero-shot": 73.68,
+          "Random": 77.61,
+          "Cosine": 75.67,
+          "Euclidean": 81.97,
+          "Delta-KNN": 78.69,
+          "Proposed": 85.24
         }
       }
     },
 
     "precision": {
       "ml": {
-        "Logistic Regression": 87.30,
-        "XGBoost": 87.30
+        "Logistic Regression": 83.87,
+        "XGBoost": 86.21
       },
 
       "llm": {
         "GPT-5.4": {
-          "Zero-shot": 84.13,
-          "Random": 84.13,
-          "Cosine": 73.02,
-          "Euclidean": 84.13,
+          "Zero-shot": 85.18,
+          "Random": 88.00,
+          "Cosine": 73.33,
+          "Euclidean": 80.64,
           "Delta-KNN": 85.71,
-          "Proposed": 90.48
+          "Proposed": 96.00
         },
 
         "Grok-4.2": {
-          "Zero-shot": 68.25,
-          "Random": 76.19,
-          "Cosine": 71.43,
-          "Euclidean": 82.54,
-          "Delta-KNN": 79.36,
-          "Proposed": 85.71
+          "Zero-shot": 59.57,
+          "Random": 68.42,
+          "Cosine": 62.22,
+          "Euclidean": 78.13,
+          "Delta-KNN": 75.00,
+          "Proposed": 81.25
         }
       }
     }
