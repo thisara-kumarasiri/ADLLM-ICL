@@ -4516,3 +4516,181 @@ footer {
   }
 
 }
+
+/* ============================================================
+   EXAMPLE RESPONSE CONTROLS
+============================================================ */
+
+.llm-example-controls {
+  display:
+    flex;
+
+  justify-content:
+    center;
+
+  align-items:
+    flex-start;
+
+  flex-wrap:
+    wrap;
+
+  gap:
+    28px;
+
+  margin:
+    24px
+    0
+    30px;
+}
+
+
+.llm-example-control-group {
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  align-items:
+    center;
+
+  gap:
+    8px;
+}
+
+
+.llm-example-control-label {
+  color:
+    var(--muted);
+
+  font-size:
+    0.75rem;
+
+  font-weight:
+    700;
+}
+
+
+.llm-example-tabs {
+  display:
+    flex;
+
+  gap:
+    7px;
+}
+
+
+.llm-example-filter,
+.llm-outcome-filter {
+  min-width:
+    90px;
+
+  padding:
+    8px
+    16px;
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius:
+    999px;
+
+  background:
+    #fff;
+
+  color:
+    var(--text);
+
+  font:
+    inherit;
+
+  font-size:
+    0.82rem;
+
+  font-weight:
+    700;
+
+  cursor:
+    pointer;
+}
+
+
+.llm-example-filter:hover,
+.llm-outcome-filter:hover {
+  border-color:
+    var(--accent);
+}
+
+
+.llm-example-filter.active,
+.llm-outcome-filter.active {
+  border-color:
+    var(--accent);
+
+  background:
+    var(--accent);
+
+  color:
+    #fff;
+}
+
+
+/* ============================================================
+   RESULT DISPLAY
+============================================================ */
+
+.llm-example-result {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    7px;
+}
+
+
+.llm-example-outcome {
+  padding:
+    5px
+    9px;
+
+  border-radius:
+    999px;
+
+  font-size:
+    0.7rem;
+
+  font-weight:
+    800;
+}
+
+
+.example-outcome-correct {
+  color:
+    #438069;
+
+  background:
+    rgba(
+      67,
+      128,
+      105,
+      0.13
+    );
+}
+
+
+.example-outcome-incorrect {
+  color:
+    #b55757;
+
+  background:
+    rgba(
+      181,
+      87,
+      87,
+      0.13
+    );
+}

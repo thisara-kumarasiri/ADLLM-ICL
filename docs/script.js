@@ -3466,3 +3466,331 @@ function renderSubjectDirectionality(
     html;
 
 }
+
+// ============================================================
+// EXAMPLE LLM RESPONSES
+// ============================================================
+
+const llmExampleData = {
+
+  AD: {
+
+    correct: {
+
+      "GPT-5.4": {
+        true_label: "AD",
+        prediction: "AD",
+        method: "Proposed",
+        reasoning:
+          "Reduced hippocampal and entorhinal measurements, together with lower whole-brain volume, provide evidence of an Alzheimer's disease pattern. The abnormalities in medial temporal regions outweigh the comparatively preserved measurements elsewhere."
+      },
+
+      "Grok-4.2": {
+        true_label: "AD",
+        prediction: "AD",
+        method: "Proposed",
+        reasoning:
+          "The subject shows reduced medial temporal measurements, particularly involving the hippocampus and entorhinal cortex. These changes are consistent with neurodegenerative patterns associated with Alzheimer's disease."
+      }
+
+    },
+
+
+    incorrect: {
+
+      "GPT-5.4": {
+        true_label: "AD",
+        prediction: "CN",
+        method: "Proposed",
+        reasoning:
+          "Several regional measurements appear relatively preserved, including global brain volume and cortical measurements. Although some medial temporal reductions are present, the overall structural pattern appears more consistent with normal aging."
+      },
+
+      "Grok-4.2": {
+        true_label: "AD",
+        prediction: "CN",
+        method: "Proposed",
+        reasoning:
+          "The majority of structural measurements remain relatively preserved. Mild reductions in selected regions are present, but they do not appear sufficiently pronounced to strongly support Alzheimer's disease."
+      }
+
+    }
+
+  },
+
+
+  CN: {
+
+    correct: {
+
+      "GPT-5.4": {
+        true_label: "CN",
+        prediction: "CN",
+        method: "Proposed",
+        reasoning:
+          "Hippocampal, entorhinal, and global brain measurements are comparatively preserved. The absence of pronounced medial temporal atrophy provides stronger evidence for normal aging than Alzheimer's disease."
+      },
+
+      "Grok-4.2": {
+        true_label: "CN",
+        prediction: "CN",
+        method: "Proposed",
+        reasoning:
+          "The structural measurements show relatively preserved medial temporal and global brain volumes. This pattern is more consistent with cognitively normal aging than Alzheimer's disease."
+      }
+
+    },
+
+
+    incorrect: {
+
+      "GPT-5.4": {
+        true_label: "CN",
+        prediction: "AD",
+        method: "Proposed",
+        reasoning:
+          "Reduced hippocampal and entorhinal measurements suggest medial temporal atrophy. Combined with reductions in several other structural features, the overall pattern appears more consistent with Alzheimer's disease."
+      },
+
+      "Grok-4.2": {
+        true_label: "CN",
+        prediction: "AD",
+        method: "Proposed",
+        reasoning:
+          "Lower measurements in memory-related medial temporal regions provide evidence toward Alzheimer's disease. These abnormalities outweigh the preserved measurements observed in other regions."
+      }
+
+    }
+
+  }
+
+};
+
+
+let activeExampleLabel =
+  "AD";
+
+let activeExampleOutcome =
+  "correct";
+
+  function renderLlmExamples() {
+
+  const container =
+    document.getElementById(
+      "llm-example-grid"
+    );
+
+
+  if (!container) {
+    return;
+  }
+
+
+  const examples =
+    llmExampleData[
+      activeExampleLabel
+    ]?.[
+      activeExampleOutcome
+    ];
+
+
+  if (!examples) {
+    return;
+  }
+
+
+  const models = [
+    "GPT-5.4",
+    "Grok-4.2"
+  ];
+
+
+  container.innerHTML =
+    models
+      .map(model => {
+
+        const example =
+          examples[model];
+
+
+        if (!example) {
+          return "";
+        }
+
+
+        const isCorrect =
+          example.true_label
+          === example.prediction;
+
+
+        const predictionClass =
+          example.prediction === "AD"
+            ? "prediction-ad-example"
+            : "prediction-cn-example";
+
+
+        const outcomeClass =
+          isCorrect
+            ? "example-outcome-correct"
+            : "example-outcome-incorrect";
+
+
+        return `
+
+          <article class="llm-example-card">
+
+            <div class="llm-example-header">
+
+              <span class="llm-example-model">
+                ${model}
+              </span>
+
+
+              <div class="llm-example-result">
+
+                <span
+                  class="
+                    llm-example-prediction
+                    ${predictionClass}
+                  "
+                >
+                  ${example.prediction}
+                </span>
+
+
+                <span
+                  class="
+                    llm-example-outcome
+                    ${outcomeClass}
+                  "
+                >
+                  ${isCorrect ? "✓ Correct" : "✕ Incorrect"}
+                </span>
+
+              </div>
+
+            </div>
+
+
+            <div class="llm-example-meta">
+
+              <span>
+                <strong>True label:</strong>
+                ${example.true_label}
+              </span>
+
+              <span>
+                <strong>Prediction:</strong>
+                ${example.prediction}
+              </span>
+
+              <span>
+                <strong>Example selection:</strong>
+                ${example.method}
+              </span>
+
+            </div>
+
+
+            <div class="llm-example-content">
+
+              <span class="llm-example-label">
+                Reasoning
+              </span>
+
+              <p>
+                ${example.reasoning}
+              </p>
+
+            </div>
+
+          </article>
+
+        `;
+
+      })
+      .join("");
+
+}
+
+// ============================================================
+// TRUE LABEL FILTER
+// ============================================================
+
+document
+  .querySelectorAll(
+    ".llm-example-filter"
+  )
+  .forEach(button => {
+
+    button.addEventListener(
+      "click",
+      () => {
+
+        activeExampleLabel =
+          button.dataset.exampleLabel;
+
+
+        document
+          .querySelectorAll(
+            ".llm-example-filter"
+          )
+          .forEach(item => {
+
+            item.classList.toggle(
+              "active",
+              item === button
+            );
+
+          });
+
+
+        renderLlmExamples();
+
+      }
+    );
+
+  });
+
+
+// ============================================================
+// PREDICTION OUTCOME FILTER
+// ============================================================
+
+document
+  .querySelectorAll(
+    ".llm-outcome-filter"
+  )
+  .forEach(button => {
+
+    button.addEventListener(
+      "click",
+      () => {
+
+        activeExampleOutcome =
+          button.dataset.exampleOutcome;
+
+
+        document
+          .querySelectorAll(
+            ".llm-outcome-filter"
+          )
+          .forEach(item => {
+
+            item.classList.toggle(
+              "active",
+              item === button
+            );
+
+          });
+
+
+        renderLlmExamples();
+
+      }
+    );
+
+  });
+
+
+renderLlmExamples();

@@ -632,103 +632,83 @@
 
         <p class="analysis-description">
           Representative examples illustrating how GPT-5.4 and Grok-4.2
-          interpret MRI-derived structural measurements when producing
-          their final predictions.
+          reason about MRI-derived features for correct and incorrect
+          predictions across Alzheimer's disease and cognitively normal subjects.
         </p>
 
       </div>
 
 
-      <div class="llm-example-grid">
+      <!-- =====================================================
+          EXAMPLE FILTERS
+      ====================================================== -->
 
-        <!-- GPT-5.4 -->
-        <article class="llm-example-card">
+      <div class="llm-example-controls">
 
-          <div class="llm-example-header">
-            <span class="llm-example-model">
-              GPT-5.4
-            </span>
+        <div class="llm-example-control-group">
 
-            <span class="llm-example-prediction prediction-ad-example">
+          <span class="llm-example-control-label">
+            True label
+          </span>
+
+          <div class="llm-example-tabs">
+
+            <button
+              class="llm-example-filter active"
+              data-example-label="AD"
+            >
               AD
-            </span>
-          </div>
+            </button>
 
-          <div class="llm-example-meta">
-            <span>
-              <strong>True label:</strong> AD
-            </span>
-
-            <span>
-              <strong>Example selection:</strong> Proposed
-            </span>
-          </div>
-
-          <div class="llm-example-content">
-
-            <span class="llm-example-label">
-              Reasoning
-            </span>
-
-            <p>
-              The subject demonstrates reduced hippocampal and entorhinal
-              measurements together with lower whole-brain volume relative
-              to intracranial volume. These structural changes primarily
-              involve medial temporal regions that are commonly affected in
-              Alzheimer's disease. Although some measurements remain within
-              a relatively preserved range, the overall anatomical pattern
-              provides stronger evidence toward Alzheimer's disease.
-            </p>
+            <button
+              class="llm-example-filter"
+              data-example-label="CN"
+            >
+              CN
+            </button>
 
           </div>
 
-        </article>
+        </div>
 
 
-        <!-- GROK-4.2 -->
-        <article class="llm-example-card">
+        <div class="llm-example-control-group">
 
-          <div class="llm-example-header">
-            <span class="llm-example-model">
-              Grok-4.2
-            </span>
+          <span class="llm-example-control-label">
+            Prediction outcome
+          </span>
 
-            <span class="llm-example-prediction prediction-ad-example">
-              AD
-            </span>
-          </div>
+          <div class="llm-example-tabs">
 
-          <div class="llm-example-meta">
-            <span>
-              <strong>True label:</strong> AD
-            </span>
+            <button
+              class="llm-outcome-filter active"
+              data-example-outcome="correct"
+            >
+              Correct
+            </button>
 
-            <span>
-              <strong>Example selection:</strong> Proposed
-            </span>
-          </div>
-
-          <div class="llm-example-content">
-
-            <span class="llm-example-label">
-              Reasoning
-            </span>
-
-            <p>
-              Reduced hippocampal and entorhinal measurements provide
-              evidence of medial temporal atrophy, while reduced global
-              brain volume further supports an Alzheimer's disease pattern.
-              Several other cortical measurements appear comparatively
-              preserved, but the abnormalities in regions most relevant to
-              memory-related neurodegeneration outweigh these preserved
-              features. The overall evidence therefore favors Alzheimer's
-              disease.
-            </p>
+            <button
+              class="llm-outcome-filter"
+              data-example-outcome="incorrect"
+            >
+              Incorrect
+            </button>
 
           </div>
 
-        </article>
+        </div>
 
+      </div>
+
+
+      <!-- =====================================================
+          MODEL EXAMPLES
+      ====================================================== -->
+
+      <div
+        id="llm-example-grid"
+        class="llm-example-grid"
+      >
       </div>
 
     </div>
