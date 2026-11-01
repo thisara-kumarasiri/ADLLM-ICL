@@ -3511,7 +3511,7 @@ const llmExampleData = {
         prediction: "CN",
         method: "Proposed",
         reasoning:
-          `This 56.6-year-old female shows a higher Brain volume/ICV ratio (0.72) than all AD cases (0.67). Hippocampal volumes are well-preserved (Left 3700 mm³, Right 3767 mm³), clearly exceeding the AD examples (2351-2798 mm³) and aligning with the Non-AD cases (3522â€“3906 mm³). Ventricular volumes are markedly smaller (Left lateral ventricle 7048 mm³, Right 5962 mm³, 3rd ventricle 860 mm³) compared to AD cases, indicating minimal atrophy. Cortical thickness values, particularly in entorhinal, temporal, and frontal regions, are robust. Combined with the relatively young age, the imaging profile is inconsistent with Alzheimer's disease.`
+          `This 56.6-year-old female shows a higher Brain volume/ICV ratio (0.72) than all AD cases (0.67). Hippocampal volumes are well-preserved (Left 3700 mm³, Right 3767 mm³), clearly exceeding the AD examples (2351-2798 mm³) and aligning with the Non-AD cases (3522-3906 mm³). Ventricular volumes are markedly smaller (Left lateral ventricle 7048 mm³, Right 5962 mm³, 3rd ventricle 860 mm³) compared to AD cases, indicating minimal atrophy. Cortical thickness values, particularly in entorhinal, temporal, and frontal regions, are robust. Combined with the relatively young age, the imaging profile is inconsistent with Alzheimer's disease.`
       }
 
     }
@@ -3528,7 +3528,7 @@ const llmExampleData = {
         prediction: "CN",
         method: "Proposed",
         reasoning:
-          `The MRI does **not show the disproportionate medial temporal atrophy** typical of Alzheimer's disease: hippocampal volumes are relatively preserved (L 3308 mm³, R 3167 mm³), entorhinal cortices are also fairly preserved (L 1701 mm³/3.216 mm, R 1524 mm³/2.861 mm), and parahippocampal/temporal association cortices remain maintained. There is **moderate generalized age-related atrophy with enlarged lateral ventricles** and a mildly reduced brain volume-to-ICV ratio (0.69), but the overall pattern is more consistent with **non-AD aging/global atrophy** than classic AD.`
+          `The MRI does not show the disproportionate medial temporal atrophy typical of Alzheimer's disease: hippocampal volumes are relatively preserved (L 3308 mm³, R 3167 mm³), entorhinal cortices are also fairly preserved (L 1701 mm³/3.216 mm, R 1524 mm³/2.861 mm), and parahippocampal/temporal association cortices remain maintained. There is moderate generalized age-related atrophy with enlarged lateral ventricles and a mildly reduced brain volume-to-ICV ratio (0.69), but the overall pattern is more consistent with non-AD aging/global atrophy than classic AD.`
       },
 
       "Grok-4.2": {
