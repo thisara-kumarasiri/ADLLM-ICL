@@ -1958,8 +1958,7 @@ footer {
 ============================================================ */
 
 .subject-heatmap-scroll {
-  width:
-    100%;
+  width: 100%;
 
   overflow-x:
     auto;
@@ -1968,6 +1967,12 @@ footer {
     0
     0
     8px;
+
+  display:
+    flex;
+
+  justify-content:
+    center;
 }
 
 
@@ -1987,10 +1992,14 @@ footer {
     max-content;
 
   min-width:
-    100%;
+    max-content;
 
   align-items:
     stretch;
+
+  margin:
+    0
+    auto;
 }
 
 
