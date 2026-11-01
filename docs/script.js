@@ -3482,8 +3482,7 @@ const llmExampleData = {
         prediction: "AD",
         method: "Proposed",
         reasoning:
-          `Diagnosis: Alzheimer's disease
-          Reasoning: The pattern shows marked bilateral medial temporal lobe atrophy, especially very low entorhinal volumes/thickness (L 618, R 858; ~1.8â€“1.9 mm), low parahippocampal measurements, and striking amygdalar loss (L 492, R 687), which is highly typical of AD. There is also major ventricular enlargement (lateral ventricles L 40013, R 33735; inferior lateral ventricles enlarged; 3rd ventricle 2968), supporting significant central/mesial temporal atrophy. Although total brain volume ratio is only moderately reduced (0.69), the regional atrophy pattern is much more consistent with Alzheimer's disease than with non-AD aging.`
+          `The pattern shows marked bilateral medial temporal lobe atrophy, especially very low entorhinal volumes/thickness (L 618, R 858; ~1.8-1.9 mm), low parahippocampal measurements, and striking amygdalar loss (L 492, R 687), which is highly typical of AD. There is also major ventricular enlargement (lateral ventricles L 40013, R 33735; inferior lateral ventricles enlarged; 3rd ventricle 2968), supporting significant central/medial temporal atrophy. Although total brain volume ratio is only moderately reduced (0.69), the regional atrophy pattern is much more consistent with Alzheimer's disease than with non-AD aging.`
       },
 
       "Grok-4.2": {
@@ -3491,10 +3490,7 @@ const llmExampleData = {
         prediction: "AD",
         method: "Proposed",
         reasoning:
-          `Diagnosis: Alzheimer's disease
-
-Evidence-based reasoning: 
-The entorhinal cortex shows marked atrophy (Left: 618 mmÂ³ / 1.942 mm; Right: 858 mmÂ³ / 1.805 mm), closely matching the AD examples (Ex1 and Ex3) and contrasting sharply with the preserved volumes (>1400 mmÂ³) and thicknesses (>3.0 mm) seen in both Non-AD cases. Amygdala volumes are also reduced (Left 492 mmÂ³, Right 687 mmÂ³), falling below the AD range in the examples. Lateral ventricles are severely enlarged (Left 40,013 mmÂ³, Right 33,735 mmÂ³), consistent with Ex3 (AD) and indicating advanced atrophy; inferior lateral ventricles are similarly expanded. Brain-to-ICV ratio (0.69) matches the AD cohort. Although hippocampal volumes are relatively preserved compared to Ex1, the entorhinal, amygdala, and ventricular findings are hallmark early and progressive AD signatures that outweigh this single discrepancy.`
+          `The entorhinal cortex shows marked atrophy (Left: 618 mm³ / 1.942 mm; Right: 858 mm³ / 1.805 mm), closely matching the AD examples (Ex1 and Ex3) and contrasting sharply with the preserved volumes (>1400 mm³) and thicknesses (>3.0 mm) seen in both Non-AD cases. Amygdala volumes are also reduced (Left 492 mm³, Right 687 mm³), falling below the AD range in the examples. Lateral ventricles are severely enlarged (Left 40,013 mm³, Right 33,735 mm³), consistent with Ex3 (AD) and indicating advanced atrophy; inferior lateral ventricles are similarly expanded. Brain-to-ICV ratio (0.69) matches the AD cohort. Although hippocampal volumes are relatively preserved compared to Ex1, the entorhinal, amygdala, and ventricular findings are hallmark early and progressive AD signatures that outweigh this single discrepancy.`
       }
 
     },
@@ -3507,9 +3503,7 @@ The entorhinal cortex shows marked atrophy (Left: 618 mmÂ³ / 1.942 mm; Right: 
         prediction: "CN",
         method: "Proposed",
         reasoning:
-          `Diagnosis: Non-Alzheimer's disease
-
-Reasoning: Brain volume is relatively preserved for age (brain volume/ICV ratio 0.71), and there is no clear Alzheimer-pattern diffuse temporoparietal cortical thinning. Key AD-vulnerable regions such as the precuneus, posterior cingulate, inferior parietal, middle/superior temporal cortices, and hippocampi are overall fairly well preserved, with only mild medial temporal asymmetry. Although the left lateral ventricle is enlarged and the entorhinal volumes are somewhat low, the overall MRI pattern does not show the typical widespread atrophy profile of Alzheimer's disease.`
+          `Brain volume is relatively preserved for age (brain volume/ICV ratio 0.71), and there is no clear Alzheimer-pattern diffuse temporoparietal cortical thinning. Key AD-vulnerable regions such as the precuneus, posterior cingulate, inferior parietal, middle/superior temporal cortices, and hippocampi are overall fairly well preserved, with only mild medial temporal asymmetry. Although the left lateral ventricle is enlarged and the entorhinal volumes are somewhat low, the overall MRI pattern does not show the typical widespread atrophy profile of Alzheimer's disease.`
       },
 
       "Grok-4.2": {
@@ -3517,10 +3511,7 @@ Reasoning: Brain volume is relatively preserved for age (brain volume/ICV ratio 
         prediction: "CN",
         method: "Proposed",
         reasoning:
-          `**Diagnosis: Non-Alzheimer's**
-
-**Evidence-based reasoning:**  
-This 56.6-year-old female shows a higher Brain volume/ICV ratio (0.72) than all AD cases (0.67). Hippocampal volumes are well-preserved (Left 3700 mmÂ³, Right 3767 mmÂ³), clearly exceeding the AD examples (2351â€“2798 mmÂ³) and aligning with the Non-AD cases (3522â€“3906 mmÂ³). Ventricular volumes are markedly smaller (Left lateral ventricle 7048 mmÂ³, Right 5962 mmÂ³, 3rd ventricle 860 mmÂ³) compared to AD cases, indicating minimal atrophy. Cortical thickness values, particularly in entorhinal, temporal, and frontal regions, are robust. Combined with the relatively young age, the imaging profile is inconsistent with Alzheimer's disease.`
+          `This 56.6-year-old female shows a higher Brain volume/ICV ratio (0.72) than all AD cases (0.67). Hippocampal volumes are well-preserved (Left 3700 mm³, Right 3767 mm³), clearly exceeding the AD examples (2351-2798 mm³) and aligning with the Non-AD cases (3522â€“3906 mm³). Ventricular volumes are markedly smaller (Left lateral ventricle 7048 mm³, Right 5962 mm³, 3rd ventricle 860 mm³) compared to AD cases, indicating minimal atrophy. Cortical thickness values, particularly in entorhinal, temporal, and frontal regions, are robust. Combined with the relatively young age, the imaging profile is inconsistent with Alzheimer's disease.`
       }
 
     }
@@ -3537,9 +3528,7 @@ This 56.6-year-old female shows a higher Brain volume/ICV ratio (0.72) than all 
         prediction: "CN",
         method: "Proposed",
         reasoning:
-          `**Diagnosis: Non-Alzheimer's disease**
-
-**Reasoning:** The MRI does **not show the disproportionate medial temporal atrophy** typical of Alzheimer's disease: hippocampal volumes are relatively preserved (L 3308 mmÂ³, R 3167 mmÂ³), entorhinal cortices are also fairly preserved (L 1701 mmÂ³/3.216 mm, R 1524 mmÂ³/2.861 mm), and parahippocampal/temporal association cortices remain maintained. There is **moderate generalized age-related atrophy with enlarged lateral ventricles** and a mildly reduced brain volume-to-ICV ratio (0.69), but the overall pattern is more consistent with **non-AD aging/global atrophy** than classic AD.`
+          `The MRI does **not show the disproportionate medial temporal atrophy** typical of Alzheimer's disease: hippocampal volumes are relatively preserved (L 3308 mm³, R 3167 mm³), entorhinal cortices are also fairly preserved (L 1701 mm³/3.216 mm, R 1524 mm³/2.861 mm), and parahippocampal/temporal association cortices remain maintained. There is **moderate generalized age-related atrophy with enlarged lateral ventricles** and a mildly reduced brain volume-to-ICV ratio (0.69), but the overall pattern is more consistent with **non-AD aging/global atrophy** than classic AD.`
       },
 
       "Grok-4.2": {
@@ -3547,9 +3536,7 @@ This 56.6-year-old female shows a higher Brain volume/ICV ratio (0.72) than all 
         prediction: "CN",
         method: "Proposed",
         reasoning:
-          `**Diagnosis: Non-Alzheimer's**
-
-**Evidence-based reasoning:** Entorhinal cortex volumes (L 1701 mmÂ³, R 1524 mmÂ³) and thicknesses (L 3.216 mm, R 2.861 mm) are well preserved, exceeding the AD examples (particularly Example 3: L entorhinal 1039 mmÂ³ / 1.902 mm). Hippocampal volumes (L 3308 mmÂ³, R 3167 mmÂ³) are comparable to or better than both AD and non-AD cases. Precuneus and posterior cingulate thicknesses are also maintained relative to the AD examples. While lateral ventricles are enlarged, this matches the degree seen in Example 4 (Non-Alzheimerâ€™s, age 80.8, even larger ventricles). Overall volumetric and thickness pattern aligns with the non-AD examples.`
+          `Entorhinal cortex volumes (L 1701 mm³, R 1524 mm³) and thicknesses (L 3.216 mm, R 2.861 mm) are well preserved, exceeding the AD examples (particularly Example 3: L entorhinal 1039 mm³ / 1.902 mm). Hippocampal volumes (L 3308 mm³, R 3167 mm³) are comparable to or better than both AD and non-AD cases. Precuneus and posterior cingulate thicknesses are also maintained relative to the AD examples. While lateral ventricles are enlarged, this matches the degree seen in Example 4 (Non-Alzheimer's, age 80.8, even larger ventricles). Overall volumetric and thickness pattern aligns with the non-AD examples.`
       }
 
     },
@@ -3562,9 +3549,7 @@ This 56.6-year-old female shows a higher Brain volume/ICV ratio (0.72) than all 
         prediction: "AD",
         method: "Proposed",
         reasoning:
-          `Diagnosis: Alzheimer's disease
-
-Reasoning: The scan shows an AD-like atrophy pattern, especially bilateral medial temporal lobe loss: entorhinal cortex is very small (L 1026, R 1128 mmÂ³), parahippocampal gyri are reduced (L 1447, R 1194 mmÂ³), and hippocampi are relatively low for an older male (L 2830, R 2979 mmÂ³). There is also diffuse volume loss with a low brain volume/ICV ratio (0.68) and marked ventricular enlargement (very large lateral ventricles and enlarged 3rd ventricle), which supports neurodegenerative atrophy. Overall this is more consistent with Alzheimer-type neurodegeneration than non-AD aging.`
+          `The scan shows an AD-like atrophy pattern, especially bilateral medial temporal lobe loss: entorhinal cortex is very small (L 1026, R 1128 mm³), parahippocampal gyri are reduced (L 1447, R 1194 mm³), and hippocampi are relatively low for an older male (L 2830, R 2979 mm³). There is also diffuse volume loss with a low brain volume/ICV ratio (0.68) and marked ventricular enlargement (very large lateral ventricles and enlarged 3rd ventricle), which supports neurodegenerative atrophy. Overall this is more consistent with Alzheimer-type neurodegeneration than non-AD aging.`
       },
 
       "Grok-4.2": {
@@ -3572,10 +3557,7 @@ Reasoning: The scan shows an AD-like atrophy pattern, especially bilateral media
         prediction: "AD",
         method: "Proposed",
         reasoning:
-         `Diagnosis: Alzheimer's disease
-
-Evidence-based reasoning:  
-This 77.6-year-old male shows multiple hallmark neuroimaging features of Alzheimer's disease. Entorhinal cortex volumes are markedly reduced (Left 1026 mmÂ³, Right 1128 mmÂ³), lower than both non-AD cases (particularly the right side). Hippocampal volumes (Left 2830 mmÂ³, Right 2978 mmÂ³) are relatively small for a male compared to the non-AD male example (3379/3835 mmÂ³). Parahippocampal gyrus cortical thickness is abnormally thin (Left 1.669 mm, Right 1.880 mm), falling below all AD examples and well below non-AD cases. The brain volume to ICV ratio is the lowest observed (0.68), accompanied by substantially enlarged lateral ventricles (Left 32303.9 mmÂ³, Right 21733.5 mmÂ³) and 3rd ventricle (2575.6 mmÂ³). These findings align with the AD patterns in Examples 1 and 3, particularly medial temporal lobe atrophy, and diverge from the preserved volumes and thicknesses seen in the non-AD cases.` 
+         `This 77.6-year-old male shows multiple hallmark neuroimaging features of Alzheimer's disease. Entorhinal cortex volumes are markedly reduced (Left 1026 mm³, Right 1128 mm³), lower than both non-AD cases (particularly the right side). Hippocampal volumes (Left 2830 mm³, Right 2978 mm³) are relatively small for a male compared to the non-AD male example (3379/3835 mm³). Parahippocampal gyrus cortical thickness is abnormally thin (Left 1.669 mm, Right 1.880 mm), falling below all AD examples and well below non-AD cases. The brain volume to ICV ratio is the lowest observed (0.68), accompanied by substantially enlarged lateral ventricles (Left 32303.9 mm³, Right 21733.5 mm³) and 3rd ventricle (2575.6 mm³). These findings align with the AD patterns in Examples 1 and 3, particularly medial temporal lobe atrophy, and diverge from the preserved volumes and thicknesses seen in the non-AD cases.` 
       }
 
     }
