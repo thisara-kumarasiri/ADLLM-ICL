@@ -125,7 +125,7 @@
         </h2>
 
         <p>
-          Machine-learning (ML) models can effectively classify Alzheimer’s disease (AD) using 
+          Machine-learning (ML) models can effectively classify Alzheimer’s disease using 
           MRI-derived structural features, but they provide limited explanation of how multiple 
           anatomical measurements contribute to individual predictions. Large language models 
           (LLMs) can complement these models by generating both predictions and natural-language 
@@ -204,18 +204,36 @@
     <div class="method-description">
 
       <p>
-        The proposed framework uses task-relevant information learned by
-        conventional machine-learning models to guide the selection of
-        informative demonstrations for few-shot in-context learning.
-        Logistic regression provides global feature-importance information,
-        while XGBoost captures subject-specific decision-path information
-        and tree-level gain. These signals are used to identify training
-        subjects that are informative for the query subject while maintaining
-        a balanced set of Alzheimer's disease and cognitively normal examples.
-        The selected demonstrations, together with the query subject's
-        MRI-derived structural features, are then provided to the LLM to generate both a 
-        final AD/CN prediction and corresponding
-        natural-language reasoning.
+        The proposed framework combines complementary information from logistic regression  
+        and XGBoost to guide few-shot example selection. Logistic Regression (LR) provides a global 
+        view of which MRI-derived features are most important for distinguishing Alzheimer’s 
+        disease (AD) from cognitively normal (CN) subjects, while XGBoost (XGB) provides local, subject-specific 
+        information through the decision paths followed by each individual. </p>
+
+      <p>
+        Both models are first trained on the AD–CN classification task. The LR coefficients are 
+        converted into normalized feature-importance weights, so features that contribute more 
+        strongly to the LR decision function have greater influence during example selection. For 
+        each test subject, its path through every tree in the trained XGB model is compared with 
+        the paths of candidate training subjects. Within each tree, the method identifies the 
+        sequence of decision nodes that both subjects share before their paths diverge. These 
+        shared nodes capture the local decision rules that are relevant to both subjects. </p>
+
+      <p>
+        Similarity is then measured using only the MRI features encountered along these shared 
+        decision paths. Differences between the target and candidate feature values are weighted 
+        according to the LR-derived feature importance, giving greater emphasis to more 
+        discriminative features. Trees that do not contain any eligible shared-path features are 
+        ignored. The contribution of each valid tree is further weighted by its total split gain, 
+        so trees that contain more informative decision rules have greater influence on the final 
+        similarity score. The resulting distances are combined across the XGB ensemble to obtain 
+        a single target–candidate distance, where smaller values indicate greater similarity. </p>
+
+      <p>
+        Finally, candidate subjects are ranked separately within the AD and CN classes, and the 
+        nearest examples from each class are selected as demonstrations for the LLM prompt. This 
+        produces a balanced few-shot set that reflects both globally important MRI features and 
+        local nonlinear decision patterns learned by the machine-learning models.
       </p>
 
     </div>
