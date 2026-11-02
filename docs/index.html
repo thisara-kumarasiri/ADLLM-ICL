@@ -111,7 +111,7 @@
 
 <section
   id="abstract"
-  class="section alt abstract-section"
+  class="section"
 >
 
   <div class="container">
@@ -173,12 +173,6 @@
           Method
         </h2>
 
-        <p>
-          The proposed framework uses information learned by conventional
-          machine-learning models to guide the selection of informative
-          demonstrations for few-shot LLM classification.
-        </p>
-
       </div>
 
     </div>
@@ -194,90 +188,35 @@
 
         <img
           src="images/framework.png"
-          alt="Overview of the proposed ML-guided demonstration-selection framework"
+          alt="Proposed ML-guided demonstration-selection framework"
           class="framework-image"
         >
 
       </div>
 
-      <figcaption>
-        <strong>Proposed framework.</strong>
-        Machine-learning models extract discriminative information from
-        MRI-derived features to guide demonstration selection for few-shot
-        LLM classification and reasoning.
-      </figcaption>
-
     </figure>
 
 
     <!-- =====================================================
-         METHOD SUMMARY
+         METHOD DESCRIPTION
     ====================================================== -->
 
-    <div class="method-summary-grid">
+    <div class="method-description">
 
-      <div class="method-summary-item">
-
-        <span>01</span>
-
-        <h3>
-          Learn
-        </h3>
-
-        <p>
-          Logistic regression and XGBoost learn discriminative information
-          from the training data.
-        </p>
-
-      </div>
-
-
-      <div class="method-summary-item">
-
-        <span>02</span>
-
-        <h3>
-          Select
-        </h3>
-
-        <p>
-          ML-derived information is used to identify informative AD and CN
-          demonstrations for each test subject.
-        </p>
-
-      </div>
-
-
-      <div class="method-summary-item">
-
-        <span>03</span>
-
-        <h3>
-          Prompt
-        </h3>
-
-        <p>
-          Selected demonstrations and the query subject's MRI-derived
-          measurements are provided to the LLM.
-        </p>
-
-      </div>
-
-
-      <div class="method-summary-item">
-
-        <span>04</span>
-
-        <h3>
-          Predict & Explain
-        </h3>
-
-        <p>
-          GPT-5.4 and Grok-4.2 generate an AD/CN prediction together with
-          natural-language reasoning.
-        </p>
-
-      </div>
+      <p>
+        The proposed framework uses task-relevant information learned by
+        conventional machine-learning models to guide the selection of
+        informative demonstrations for few-shot in-context learning.
+        Logistic regression provides global feature-importance information,
+        while XGBoost captures subject-specific decision-path information
+        and tree-level gain. These signals are used to identify training
+        subjects that are informative for the query subject while maintaining
+        a balanced set of Alzheimer's disease and cognitively normal examples.
+        The selected demonstrations, together with the query subject's
+        MRI-derived structural features, are then provided to the LLM to generate both a 
+        final AD/CN prediction and corresponding
+        natural-language reasoning.
+      </p>
 
     </div>
 
