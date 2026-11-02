@@ -155,6 +155,137 @@
 </section>
 
 <!-- =========================================================
+     METHOD
+========================================================= -->
+
+<section
+  id="method"
+  class="section alt"
+>
+
+  <div class="container">
+
+    <div class="section-heading standard-section-heading">
+
+      <div>
+
+        <h2>
+          Method
+        </h2>
+
+        <p>
+          The proposed framework uses information learned by conventional
+          machine-learning models to guide the selection of informative
+          demonstrations for few-shot LLM classification.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         FRAMEWORK FIGURE
+    ====================================================== -->
+
+    <figure class="framework-figure">
+
+      <div class="framework-image-wrap">
+
+        <img
+          src="images/framework.png"
+          alt="Overview of the proposed ML-guided demonstration-selection framework"
+          class="framework-image"
+        >
+
+      </div>
+
+      <figcaption>
+        <strong>Proposed framework.</strong>
+        Machine-learning models extract discriminative information from
+        MRI-derived features to guide demonstration selection for few-shot
+        LLM classification and reasoning.
+      </figcaption>
+
+    </figure>
+
+
+    <!-- =====================================================
+         METHOD SUMMARY
+    ====================================================== -->
+
+    <div class="method-summary-grid">
+
+      <div class="method-summary-item">
+
+        <span>01</span>
+
+        <h3>
+          Learn
+        </h3>
+
+        <p>
+          Logistic regression and XGBoost learn discriminative information
+          from the training data.
+        </p>
+
+      </div>
+
+
+      <div class="method-summary-item">
+
+        <span>02</span>
+
+        <h3>
+          Select
+        </h3>
+
+        <p>
+          ML-derived information is used to identify informative AD and CN
+          demonstrations for each test subject.
+        </p>
+
+      </div>
+
+
+      <div class="method-summary-item">
+
+        <span>03</span>
+
+        <h3>
+          Prompt
+        </h3>
+
+        <p>
+          Selected demonstrations and the query subject's MRI-derived
+          measurements are provided to the LLM.
+        </p>
+
+      </div>
+
+
+      <div class="method-summary-item">
+
+        <span>04</span>
+
+        <h3>
+          Predict & Explain
+        </h3>
+
+        <p>
+          GPT-5.4 and Grok-4.2 generate an AD/CN prediction together with
+          natural-language reasoning.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =========================================================
      PAPER HIGHLIGHTS
 ========================================================= -->
 
